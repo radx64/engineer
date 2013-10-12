@@ -1,0 +1,5 @@
+TODO's:
+	-get Rasberry Pi
+	-install Raspbian
+	-install Qt 5.0
+
