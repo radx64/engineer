@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/sub.dir/sub.o  -o sub  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/hub -rdynamic libmuduo_pubsub.a -lmuduo_net 

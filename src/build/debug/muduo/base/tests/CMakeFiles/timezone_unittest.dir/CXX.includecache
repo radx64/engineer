@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/TimeZone.h
+muduo/base/copyable.h
+-
+boost/shared_ptr.hpp
+-
+time.h
+-
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/copyable.h
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/tests/TimeZone_unittest.cc
+muduo/base/TimeZone.h
+-
+stdio.h
+-
+string.h
+-
+strings.h
+-
+

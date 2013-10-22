@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/simple_time.dir/time/time.o CMakeFiles/simple_time.dir/time/main.o  -o simple_time -rdynamic -lmuduo_net 

@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/sudoku_client.dir/client.o CMakeFiles/sudoku_client.dir/sudoku.o  -o sudoku_client -rdynamic -lmuduo_net 

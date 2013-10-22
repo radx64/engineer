@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/protobuf_rpc_echo_client.dir/client.o  -o protobuf_rpc_echo_client  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/protobuf/rpcbench -rdynamic libecho_proto.a -lmuduo_protorpc -lprotobuf -lpthread 

@@ -36,6 +36,7 @@ static void stop(int signum){
  * Call state notification callback
  */
 static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCallState cstate, const char *msg){
+	LinphoneChatRoom* chat_room = linphone_core_create_chat_room(lc,"sip:radek@192.168.1.100:9998");
         switch(cstate){
                 case LinphoneCallOutgoingRinging:
                         printf("It is now ringing remotely !\n");
@@ -56,12 +57,12 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
                         printf("Call failure !");
                 break;
                 case LinphoneCallIncomingReceived:
-                		printf("Call incoming received !\n");
+                		printf("Call incoming received !: %s\n",msg);
                 		linphone_call_ref(call);
-                		//const LinphoneCallParams* params = linphone_call_get_remote_params(call);
-
                 		printf("Remote address: %s\n",linphone_call_get_remote_address_as_string(call));
+                		linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
                 		linphone_core_accept_call(lc,call);
+
 
                 break;
                 case LinphoneCallIncomingEarlyMedia:
@@ -75,29 +76,25 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
 
 static void text_received(LinphoneCore *lc, LinphoneChatRoom *room, const LinphoneAddress *from, const char *message)
 {
-	printf("Got message from %s - %s: %s\n", linphone_address_get_scheme(from), linphone_address_get_username(from) ,message);
-	linphone_chat_room_send_message(room,"Unfortunately no text commands are implemented yet!");
+	printf("Got message from %s in room %s: %s\n", linphone_address_get_username(from), linphone_address_get_domain(from) ,message);
+	linphone_chat_room_send_message(room,"Hi! I'm server!\n");
 }
 
 int main(int argc, char *argv[]){
         LinphoneCoreVTable vtable={0};
         LinphoneCore *lc;
         LinphoneCall *call=NULL;
-        const char *dest=NULL;
-
-        /* take the destination sip uri from the command line arguments */
-        if (argc>1){
-                dest=argv[1];
-        }
 
         signal(SIGINT,stop);
+
+        printf("Version: %s\n",linphone_core_get_version());
 
 #ifdef DEBUG
         linphone_core_enable_logs(NULL); /*enable liblinphone logs.*/
 #endif
         /* 
          Fill the LinphoneCoreVTable with application callbacks.
-         All are optional. Here we only use the call_state_changed callbacks
+         All are optional. Here we only use the call_state_changed callbacksestablished
          in order to get notifications about the progress of the call.
          */
         vtable.call_state_changed=call_state_changed;
@@ -106,8 +103,14 @@ int main(int argc, char *argv[]){
         /*
          Instanciate a LinphoneCore object given the LinphoneCoreVTable
         */
+        //linphone_core_disable_logs();
         lc=linphone_core_new(&vtable,NULL,NULL,NULL);
         linphone_core_set_sip_port(lc, 9999);
+
+        linphone_core_iterate(lc);
+
+        LinphoneChatRoom* chat_room = linphone_core_create_chat_room(lc,"sip:radek@192.168.1.100:9998");
+        linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
 
         /* main loop for receiving notifications and doing background linphonecore work: */
         while(running){

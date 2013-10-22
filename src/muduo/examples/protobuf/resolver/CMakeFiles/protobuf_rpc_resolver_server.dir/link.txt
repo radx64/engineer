@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/protobuf_rpc_resolver_server.dir/server.o  -o protobuf_rpc_resolver_server  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/protobuf/resolver  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/cdns -rdynamic libresolver_proto.a -lmuduo_protorpc ../../cdns/libmuduo_cdns.a -lprotobuf -lpthread -lmuduo_net -lcares 

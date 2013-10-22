@@ -60,6 +60,12 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
         }
 }
 
+static void text_received(LinphoneCore *lc, LinphoneChatRoom *room, const LinphoneAddress *from, const char *message)
+{
+	printf("Got message from %s in room %s: %s\n", linphone_address_get_username(from), linphone_address_get_domain(from) ,message);
+	linphone_chat_room_send_message(room,"Hi!. I'm client!\n");
+}
+
 int main(int argc, char *argv[]){
         LinphoneCoreVTable vtable={0};
         LinphoneCore *lc;
@@ -82,12 +88,27 @@ int main(int argc, char *argv[]){
          in order to get notifications about the progress of the call.
          */
         vtable.call_state_changed=call_state_changed;
+        vtable.text_received=text_received;
 
         /*
          Instanciate a LinphoneCore object given the LinphoneCoreVTable
         */
+        //linphone_core_disable_logs();
         lc=linphone_core_new(&vtable,NULL,NULL,NULL);
-	linphone_core_set_sip_port(lc, 9999);
+
+
+        //LinphoneAddress *from = linphone_address_new("sip:radek@192.168.1.100:9998");
+        LinphoneProxyConfig* proxy_cfg;
+        proxy_cfg = linphone_proxy_config_new();
+        linphone_proxy_config_set_identity(proxy_cfg,"sip:radek@192.168.1.100:9998"); /*set identity with user name and domain*/
+        linphone_core_add_proxy_config(lc,proxy_cfg); /*add proxy config to linphone core*/
+
+
+
+
+
+
+        linphone_core_set_sip_port(lc, 9998);
         if (dest){
                 /*
                  Place an outgoing call

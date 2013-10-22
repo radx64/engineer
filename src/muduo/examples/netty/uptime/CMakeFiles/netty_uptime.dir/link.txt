@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/netty_uptime.dir/uptime.o  -o netty_uptime -rdynamic -lmuduo_net 

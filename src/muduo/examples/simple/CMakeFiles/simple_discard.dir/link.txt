@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/simple_discard.dir/discard/discard.o CMakeFiles/simple_discard.dir/discard/main.o  -o simple_discard -rdynamic -lmuduo_net 

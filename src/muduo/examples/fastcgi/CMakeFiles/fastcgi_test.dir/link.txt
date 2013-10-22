@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/fastcgi_test.dir/fastcgi.o CMakeFiles/fastcgi_test.dir/fastcgi_test.o  -o fastcgi_test -rdynamic -lmuduo_net 

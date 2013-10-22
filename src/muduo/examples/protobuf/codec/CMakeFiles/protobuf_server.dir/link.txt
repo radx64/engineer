@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/protobuf_server.dir/server.o  -o protobuf_server  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/protobuf/codec -rdynamic libprotobuf_codec.a libquery_proto.a -lmuduo_net -lz -lprotobuf -lpthread 

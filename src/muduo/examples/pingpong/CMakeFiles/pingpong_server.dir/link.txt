@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/pingpong_server.dir/server.o  -o pingpong_server -rdynamic -lmuduo_net 

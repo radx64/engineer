@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/zeromq_remote_lat.dir/remote_lat.o  -o zeromq_remote_lat -rdynamic -lmuduo_net 

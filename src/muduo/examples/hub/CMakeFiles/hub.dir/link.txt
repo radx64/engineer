@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/hub.dir/hub.o CMakeFiles/hub.dir/codec.o  -o hub -rdynamic -lmuduo_inspect 

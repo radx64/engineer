@@ -1,0 +1,1815 @@
+Version: 3.5.2
+ortp-message-oRTP-0.20.0 initialized.
+ortp-message-assigning PCMU/8000 payload type number 0
+ortp-message-assigning GSM/8000 payload type number 3
+ortp-message-assigning PCMA/8000 payload type number 8
+ortp-message-assigning speex/8000 payload type number 110
+ortp-message-assigning speex/16000 payload type number 111
+ortp-message-assigning speex/32000 payload type number 112
+ortp-message-assigning telephone-event/8000 payload type number 101
+ortp-message-assigning G722/8000 payload type number 9
+ortp-message-assigning H263/90000 payload type number 34
+ortp-message-assigning theora/90000 payload type number 97
+ortp-message-assigning H263-1998/90000 payload type number 98
+ortp-message-assigning MP4V-ES/90000 payload type number 99
+ortp-message-assigning H264/90000 payload type number 102
+ortp-message-assigning VP8/90000 payload type number 103
+ortp-message-assigning x-snow/90000 payload type number 96
+ortp-message-assigning iLBC/8000 payload type number 100
+ortp-message-assigning AMR/8000 payload type number 104
+ortp-message-assigning AMR-WB/16000 payload type number 105
+ortp-message-assigning 1015/8000 payload type number 106
+ortp-message-assigning G726-16/8000 payload type number 107
+ortp-message-assigning G726-24/8000 payload type number 108
+ortp-message-assigning G726-32/8000 payload type number 109
+ortp-message-assigning G726-40/8000 payload type number 113
+ortp-message-assigning AAL2-G726-16/8000 payload type number 114
+ortp-message-assigning AAL2-G726-24/8000 payload type number 115
+ortp-message-assigning AAL2-G726-32/8000 payload type number 116
+ortp-message-assigning AAL2-G726-40/8000 payload type number 117
+ortp-message-assigning SILK/8000 payload type number 118
+ortp-message-assigning SILK/12000 payload type number 119
+ortp-message-assigning SILK/16000 payload type number 120
+ortp-message-assigning SILK/24000 payload type number 121
+ortp-message-assigning G729/8000 payload type number 18
+ortp-message-Mediastreamer2 2.8.2 (git: 2.8.1-5-g7114083) starting.
+ortp-message-Registering all soundcard handlers
+ortp-message-Card 'ALSA: default device' added
+ortp-warning-Could not attach mixer to card: Invalid argument
+ortp-warning-Strange, sound card HDA Intel does not seems to be capable of anything, retrying with plughw...
+ortp-message-Card 'ALSA: HDA Intel' added
+ortp-message-Card 'PulseAudio: default' added
+ortp-message-New PulseAudio context state: PA_CONTEXT_CONNECTING
+ortp-message-Registering all webcam handlers
+ortp-message-Webcam StaticImage: Static picture added
+ortp-message-Loading ms plugins fron [/usr/lib/x86_64-linux-gnu/mediastreamer/plugins]
+ortp-message-Cannot open directory /usr/lib/x86_64-linux-gnu/mediastreamer/plugins: No such file or directory
+ortp-message-ms_init() done
+ortp-message-Cannot open directory /usr/lib/liblinphone/plugins: No such file or directory
+ortp-message-linphone_core_set_playback_gain_db(): no active call.
+ortp-message-Adding new codec PCMU/8000 with fmtp 
+ortp-message-Adding new codec GSM/8000 with fmtp 
+ortp-message-Adding new codec PCMA/8000 with fmtp 
+ortp-message-Adding new codec G722/8000 with fmtp 
+ortp-message-Adding new codec L16/44100 with fmtp 
+ortp-message-Adding new codec L16/44100 with fmtp 
+ortp-message-Adding new codec speex/8000 with fmtp vbr=on
+ortp-message-Adding new codec speex/16000 with fmtp vbr=on
+ortp-message-Adding new codec speex/32000 with fmtp vbr=on
+ortp-message-Adding new codec H263/90000 with fmtp 
+ortp-message-Adding new codec x-snow/90000 with fmtp 
+ortp-message-Adding new codec theora/90000 with fmtp 
+ortp-message-Adding new codec H263-1998/90000 with fmtp CIF=1;QCIF=1
+ortp-message-Adding new codec MP4V-ES/90000 with fmtp profile-level-id=3
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-0.0.0.0 port 5060
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-New PulseAudio context state: PA_CONTEXT_AUTHORIZING
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-0.0.0.0 port 9999
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-New local ip address is 192.168.1.100
+ortp-message-Network state is now [UP]
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-0.0.0.0 port 9999
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-New PulseAudio context state: PA_CONTEXT_SETTING_NAME
+ortp-message-New PulseAudio context state: PA_CONTEXT_READY
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK494215828
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1361523633
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1438543136
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     1
+
+?
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1438543136
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 1 1438543136
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=1)
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ?
+ortp-message-allocating transaction resource 2 1443025157
+ortp-message-allocating NICT context
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK1091239531
+From: <sip:radek@192.168.1.100:9999>;tag=1669312167
+To: "Radio" <sip:radio@192.168.1.104:9999>
+Call-ID: 1443025157
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndunkrequest (id=2)
+ortp-message-eXosip: timer sec:0 usec:509995!
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK494215828
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1361523633
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1376589022
+Call-ID: 1438543136
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=1)
+ortp-message-eXosip: timer sec:0 usec:509910!
+ortp-message-Received message: 
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport=9999;branch=z9hG4bK1091239531
+From: <sip:radek@192.168.1.100:9999>;tag=1669312167
+To: "Radio" <sip:radio@192.168.1.104:9999>;tag=733858631
+Call-ID: 1443025157
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length: 0
+
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1443025157
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-cb_rcv2xx (id=2)
+ortp-message-eXosip: timer sec:5 usec:10000!
+ortp-message-linphone process event get a message 29
+
+ortp-message-Contact address updated to <sip:radek@192.168.1.100:9999>
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1441776654
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1851325942
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 2050457276
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     4
+
+1234
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:2050457276
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 3 2050457276
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=3)
+ortp-message-eXosip: timer sec:2 usec:593705!
+ortp-message-eXosip: timer sec:2 usec:593691!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: 1234
+ortp-message-allocating transaction resource 4 1250568327
+ortp-message-allocating NICT context
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK2073709786
+From: <sip:radek@192.168.1.100:9999>;tag=325782681
+To: "Radio" <sip:radio@192.168.1.104:9999>
+Call-ID: 1250568327
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndunkrequest (id=4)
+ortp-message-eXosip: timer sec:0 usec:509995!
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1441776654
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1851325942
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1333514443
+Call-ID: 2050457276
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=3)
+ortp-message-eXosip: timer sec:0 usec:509920!
+ortp-message-Received message: 
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport=9999;branch=z9hG4bK2073709786
+From: <sip:radek@192.168.1.100:9999>;tag=325782681
+To: "Radio" <sip:radio@192.168.1.104:9999>;tag=1568537525
+Call-ID: 1250568327
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length: 0
+
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1250568327
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-cb_rcv2xx (id=4)
+ortp-message-eXosip: timer sec:2 usec:536706!
+ortp-message-linphone process event get a message 29
+
+ortp-message-Contact address updated to <sip:radek@192.168.1.100:9999>
+ortp-message-cb_nict_kill_transaction (id=2)
+ortp-message-eXosip: timer sec:2 usec:470660!
+ortp-message-Received message: 
+INVITE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK335890444
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 233454488
+CSeq: 20 INVITE
+Contact: <sip:radio@192.168.1.104:9999>
+Content-Type: application/sdp
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Subject: Phone call
+Content-Length:   316
+
+v=0
+o=radio 123456 654321 IN IP4 192.168.1.104
+s=A conversation
+c=IN IP4 192.168.1.104
+t=0 0
+m=audio 7078 RTP/AVP 111 110 0 3 8 101
+a=rtpmap:111 speex/16000/1
+a=rtpmap:110 speex/8000/1
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:3 GSM/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-11
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:233454488
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 5 233454488
+ortp-message-allocating IST context
+ortp-message-cb_rcvinvite (id=5)
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 100 Trying
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK335890444
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 233454488
+CSeq: 20 INVITE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=5)
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 101 Dialog Establishement
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK335890444
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+Call-ID: 233454488
+CSeq: 20 INVITE
+Contact: <sip:radek@192.168.1.100:9999>
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=5)
+ortp-message-eXosip: timer sec:1 usec:587940!
+ortp-message-eXosip: timer sec:1 usec:587925!
+ortp-message-linphone process event get a message 5
+
+ortp-message-CALL_NEW
+
+ortp-message-Found payload speex/16000 fmtp=
+ortp-message-Found payload speex/8000 fmtp=
+ortp-message-Found payload PCMU/8000 fmtp=
+ortp-message-Found payload GSM/8000 fmtp=
+ortp-message-Found payload PCMA/8000 fmtp=
+ortp-message-Found payload telephone-event/8000 fmtp=0-11
+ortp-warning- searching for already_a_call_with_remote_address.
+ortp-message-allocating transaction resource 6 2019240393
+ortp-message-allocating NICT context
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-Local interface to reach 87.98.157.38 is 192.168.1.100.
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+OPTIONS sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK769794344
+From: <sip:radek@192.168.1.100:9999>;tag=1017319833
+To: <sip:radio@192.168.1.104:9999>
+Call-ID: 2019240393
+CSeq: 20 OPTIONS
+Accept: application/sdp
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_sndoptions (id=6)
+ortp-message-eXosip: timer sec:0 usec:509998!
+ortp-message-Notifying all friends that we are in status 5
+ortp-message-Received message: 
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport=9999;branch=z9hG4bK769794344
+From: <sip:radek@192.168.1.100:9999>;tag=1017319833
+To: <sip:radio@192.168.1.104:9999>;tag=631515486
+Call-ID: 2019240393
+CSeq: 20 OPTIONS
+Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, MESSAGE, SUBSCRIBE, NOTIFY, INFO
+Accept: application/sdp
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length: 0
+
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:2019240393
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-cb_rcv2xx (id=6)
+ortp-message-eXosip: timer sec:1 usec:558749!
+ortp-message-Partial MTU discovered : 1500
+ortp-message-mtu to 192.168.1.104 is 1500
+ortp-message-Discovered mtu is 1500, RTP payload max size is 1440
+ortp-message-Doing SDP offer/answer process
+ortp-message-Processing for stream 0
+ortp-message-remote proto: AVP => 0x1bfa6b8
+ortp-message-Starting local ring...
+ortp-message-/usr/share/sounds/linphone/rings/oldphone.wav opened: rate=44100,channel=2
+ortp-message-ms_filter_link: MSFilePlayer:0x1bfca20,0-->MSDtmfGen:0x1bfcaa0,0
+ortp-message-ms_filter_link: MSDtmfGen:0x1bfcaa0,0-->MSAlsaWrite:0x1bfcb20,0
+ortp-message-Call 0x1bf4cd0: moving from state LinphoneCallIdle to LinphoneCallIncomingReceived
+Call incoming received !
+Remote address: "Radio" <sip:radio@192.168.1.104:9999>
+ortp-message-stop ringing
+ortp-message-ms_filter_unlink: MSFilePlayer:0x1bfca20,0-->MSDtmfGen:0x1bfcaa0,0
+ortp-message-ms_filter_unlink: MSDtmfGen:0x1bfcaa0,0-->MSAlsaWrite:0x1bfcb20,0
+ortp-message-Audio (ring) MSTicker thread exiting
+ortp-message-ring stopped
+ortp-message-Contact has been fixed using local ip to sip:radek@192.168.1.100:9999
+ortp-warning-cannot set noise gate mode to [0] because no volume send
+ortp-message-Call 0x1bf4cd0: moving from state LinphoneCallIncomingReceived to LinphoneCallConnected
+We are connected !
+ortp-message-Audio bandwidth for this call is 44
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-speex_lib_ctl does not support SPEEX_LIB_CPU_FEATURE_NEON
+ortp-message-Payload's bitrate is 44000
+ortp-message-Setting audio encoder network bitrate to 44000
+ortp-message-ms_filter_link: MSAlsaRead:0x1c003e0,0-->MSSpeexEC:0x1bfca20,1
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK335890444
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+Call-ID: 233454488
+CSeq: 20 INVITE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: application/sdp
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:   265
+
+v=0
+o=radek 2009 2009 IN IP4 192.168.1.100
+s=Talk
+c=IN IP4 192.168.1.100
+t=0 0
+m=audio 7078 RTP/AVP 111 110 0 3 8 101
+a=rtpmap:111 speex/16000
+a=fmtp:111 vbr=on
+a=rtpmap:110 speex/8000
+a=fmtp:110 vbr=on
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-11
+
+ortp-message-ms_filter_link: MSSpeexEC:0x1bfca20,1-->MSVolume:0x1c00a90,0
+ortp-message-ms_filter_link: MSVolume:0x1c00a90,0-->MSSpeexEnc:0x1c00660,0
+ortp-message-ms_filter_link: MSSpeexEnc:0x1c00660,0-->MSRtpSend:0x1bfcdd0,0
+ortp-message-ms_filter_link: MSRtpRecv:0x1c001e0,0-->MSSpeexDec:0x1c009a0,0
+ortp-message-ms_filter_link: MSSpeexDec:0x1c009a0,0-->MSDtmfGen:0x1c002e0,0
+ortp-message-cb_snd123456xx (id=5)
+ortp-message-cb_nict_kill_transaction (id=5)
+ortp-message-ms_filter_link: MSDtmfGen:0x1c002e0,0-->MSVolume:0x1c00c70,0
+ortp-message-eXosip: timer sec:1 usec:75745!
+ortp-message-ms_filter_link: MSVolume:0x1c00c70,0-->MSEqualizer:0x1c00e10,0
+ortp-message-ms_filter_link: MSEqualizer:0x1c00e10,0-->MSSpeexEC:0x1bfca20,0
+ortp-message-ms_filter_link: MSSpeexEC:0x1bfca20,0-->MSAlsaWrite:0x1c00520,0
+ortp-message-Initializing speex echo canceler with framesize=64, filterlength=4000, delay_samples=0
+ortp-message-Priority used: 99
+ortp-message-Audio MSTicker setpriority() failed: Permission denied, nevermind.
+ortp-message-Setting maxbitrate=28000 to speex encoder.
+ortp-message-Using bitrate 27800 for speex encoder, ip bitrate is 43600
+ortp-message-Filter MSRtpRecv is already being scheduled; nothing to do.
+ortp-warning-No valid video stream defined.
+ortp-message-Call 0x1bf4cd0: moving from state LinphoneCallConnected to LinphoneCallStreamsRunning
+Media streams established !
+ortp-message-call answered.
+ortp-message-linphone process event get a message 29
+
+ortp-message-Contact address updated to <sip:radek@192.168.1.100:9999>
+ortp-message-ping reply !
+ortp-message-alsa_open_r: opening default at 16000Hz, bits=16, stereo=0
+ortp-warning-alsa_set_params: periodsize:512 Using 512
+ortp-warning-alsa_set_params: period:8 Using 8
+ortp-message-alsa_open_r: Audio params set
+ortp-message-ms_ticker_set_time_func: ticker updated.
+ortp-warning-Getting reference signal but no echo to synchronize on.
+ortp-warning-Not enough ref samples, using zeroes
+ortp-message-alsa_open_w: opening default at 16000Hz, bits=16, stereo=0
+ortp-warning-alsa_set_params: periodsize:512 Using 512
+ortp-warning-alsa_set_params: period:8 Using 8
+ortp-message-bandwidth usage: audio=[d=0.0,u=0.0] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=3.207723	video=0.000000
+ortp-message-alsa_open_w: Audio params set
+ortp-message-Received message: 
+ACK sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK83771127
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+Call-ID: 233454488
+CSeq: 20 ACK
+Contact: <sip:radio@192.168.1.104:9999>
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length: 0
+
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:233454488
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-eXosip: timer sec:0 usec:968169!
+ortp-message-linphone process event get a message 15
+
+ortp-message-CALL_ACK
+ortp-message-Samples are back.
+ortp-message-bandwidth usage: audio=[d=59.2,u=48.6] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.380487	video=0.000000
+ortp-warning-Not enough ref samples, using zeroes
+ortp-message-Samples are back.
+ortp-warning-Did speex packet loss concealment during 140 ms
+ortp-message-cb_nict_kill_transaction (id=4)
+ortp-message-keep alive: 1
+ortp-message-eXosip: timer sec:3 usec:450189!
+ortp-message-bandwidth usage: audio=[d=28.4,u=44.8] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.792602	video=0.000000
+ortp-message-alsa: sound/wall clock skew is average=-60.956674 ms, instant=-58 ms
+ortp-message-bandwidth usage: audio=[d=28.5,u=44.1] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.528461	video=0.000000
+ortp-message-bandwidth usage: audio=[d=32.4,u=44.4] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.399103	video=0.000000
+ortp-message-cb_nict_kill_transaction (id=6)
+ortp-message-free transaction resource 2 1443025157
+ortp-message-free nict resource
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-bandwidth usage: audio=[d=32.7,u=44.3] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.539427	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK794328257
+From: Radio <sip:radio@192.168.1.104:9999>;tag=886170714
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1285524034
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     2
+
+??
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1285524034
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 7 1285524034
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=7)
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-eXosip: Reseting timer to 10s before waking up!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ??
+ortp-message-send SIP message into the call
+
+ortp-message-allocating transaction resource 8 233454488
+ortp-message-allocating NICT context
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndunkrequest (id=8)
+ortp-message-eXosip: timer sec:0 usec:509994!
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK794328257
+From: Radio <sip:radio@192.168.1.104:9999>;tag=886170714
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1299605649
+Call-ID: 1285524034
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=7)
+ortp-message-eXosip: timer sec:0 usec:509925!
+ortp-message-alsa: sound/wall clock skew is average=-61.163529 ms, instant=-66 ms
+ortp-message-audio_stream_process_rtcp: interarrival jitter=120 , lost packets percentage since last report=0.000000, round trip time=0.000000 seconds
+ortp-message-MSQosAnalyser: lost_percentage=0.000000, int_jitter=7.500000 ms, rt_prop=0.000000 sec
+ortp-message-MSQosAnalyser: everything is fine.
+ortp-message-MSBitrateController: current state is Init
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndreq_retransmission (id=8)
+ortp-message-eXosip: timer sec:1 usec:10000!
+ortp-message-bandwidth usage: audio=[d=29.2,u=44.6] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.367747	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1192499847
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1434894758
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 480036877
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:480036877
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 9 480036877
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=9)
+ortp-message-free transaction resource 4 1250568327
+ortp-message-free nict resource
+ortp-message-eXosip: timer sec:0 usec:519165!
+ortp-message-eXosip: timer sec:0 usec:519150!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1192499847
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1434894758
+To: Radek <sip:radek@192.168.1.100:9999>;tag=143151227
+Call-ID: 480036877
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=9)
+ortp-message-eXosip: timer sec:0 usec:518634!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK384115561
+From: Radio <sip:radio@192.168.1.104:9999>;tag=397719790
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1221269324
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1221269324
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 10 1221269324
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=10)
+ortp-message-eXosip: timer sec:0 usec:173018!
+ortp-message-eXosip: timer sec:0 usec:173002!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK384115561
+From: Radio <sip:radio@192.168.1.104:9999>;tag=397719790
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1644598819
+Call-ID: 1221269324
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=10)
+ortp-message-eXosip: timer sec:0 usec:167930!
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndreq_retransmission (id=8)
+ortp-message-eXosip: timer sec:2 usec:10000!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1873833689
+From: Radio <sip:radio@192.168.1.104:9999>;tag=863944101
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 716581611
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:716581611
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 11 716581611
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=11)
+ortp-message-eXosip: timer sec:1 usec:940521!
+ortp-message-eXosip: timer sec:1 usec:940506!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1873833689
+From: Radio <sip:radio@192.168.1.104:9999>;tag=863944101
+To: Radek <sip:radek@192.168.1.100:9999>;tag=68803068
+Call-ID: 716581611
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=11)
+ortp-message-eXosip: timer sec:1 usec:927613!
+ortp-message-bandwidth usage: audio=[d=36.1,u=44.6] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=6.083634	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK980086873
+From: Radio <sip:radio@192.168.1.104:9999>;tag=795313266
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 943185379
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:943185379
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 12 943185379
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=12)
+ortp-message-eXosip: timer sec:1 usec:714835!
+ortp-message-eXosip: timer sec:1 usec:714819!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK980086873
+From: Radio <sip:radio@192.168.1.104:9999>;tag=795313266
+To: Radek <sip:radek@192.168.1.100:9999>;tag=2022559750
+Call-ID: 943185379
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=12)
+ortp-message-eXosip: timer sec:1 usec:677034!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK712790907
+From: Radio <sip:radio@192.168.1.104:9999>;tag=767682588
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 646459922
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:646459922
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 13 646459922
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=13)
+ortp-message-eXosip: timer sec:1 usec:556548!
+ortp-message-eXosip: timer sec:1 usec:556532!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK712790907
+From: Radio <sip:radio@192.168.1.104:9999>;tag=767682588
+To: Radek <sip:radek@192.168.1.100:9999>;tag=733099369
+Call-ID: 646459922
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=13)
+ortp-message-eXosip: timer sec:1 usec:526683!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1433391075
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1038155701
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 131281009
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:131281009
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 14 131281009
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=14)
+ortp-message-eXosip: timer sec:1 usec:380260!
+ortp-message-eXosip: timer sec:1 usec:380244!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1433391075
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1038155701
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1072397474
+Call-ID: 131281009
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=14)
+ortp-message-eXosip: timer sec:1 usec:376286!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1636497559
+From: Radio <sip:radio@192.168.1.104:9999>;tag=335453594
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1930115626
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+asd
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1930115626
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 15 1930115626
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=15)
+ortp-message-eXosip: timer sec:1 usec:234247!
+ortp-message-eXosip: timer sec:1 usec:234231!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: asd
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1636497559
+From: Radio <sip:radio@192.168.1.104:9999>;tag=335453594
+To: Radek <sip:radek@192.168.1.100:9999>;tag=408942171
+Call-ID: 1930115626
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=15)
+ortp-message-eXosip: timer sec:1 usec:225926!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK135233808
+From: Radio <sip:radio@192.168.1.104:9999>;tag=24261786
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 806054276
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     1
+
+d
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:806054276
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 16 806054276
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=16)
+ortp-message-eXosip: timer sec:1 usec:74135!
+ortp-message-eXosip: timer sec:1 usec:74117!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: d
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK135233808
+From: Radio <sip:radio@192.168.1.104:9999>;tag=24261786
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1996399246
+Call-ID: 806054276
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=16)
+ortp-message-eXosip: timer sec:1 usec:25411!
+ortp-message-alsa: sound/wall clock skew is average=-60.879664 ms, instant=-64 ms
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1358178773
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1399174560
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 799800593
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     6
+
+dsadsa
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:799800593
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 17 799800593
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=17)
+ortp-message-eXosip: timer sec:0 usec:887317!
+ortp-message-eXosip: timer sec:0 usec:887301!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: dsadsa
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1358178773
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1399174560
+To: Radek <sip:radek@192.168.1.100:9999>;tag=2031370714
+Call-ID: 799800593
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=17)
+ortp-message-eXosip: timer sec:0 usec:874957!
+ortp-message-bandwidth usage: audio=[d=35.5,u=44.4] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.514924	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK398591472
+From: Radio <sip:radio@192.168.1.104:9999>;tag=979790085
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 236338945
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     5
+
+sadad
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:236338945
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 18 236338945
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=18)
+ortp-message-eXosip: timer sec:0 usec:556279!
+ortp-message-eXosip: timer sec:0 usec:556262!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: sadad
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK398591472
+From: Radio <sip:radio@192.168.1.104:9999>;tag=979790085
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1704827610
+Call-ID: 236338945
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=18)
+ortp-message-eXosip: timer sec:0 usec:524113!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1471216585
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1469882338
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 165987494
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     1
+
+s
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:165987494
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 19 165987494
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=19)
+ortp-message-eXosip: timer sec:0 usec:419973!
+ortp-message-eXosip: timer sec:0 usec:419955!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: s
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1471216585
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1469882338
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1322908627
+Call-ID: 165987494
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=19)
+ortp-message-eXosip: timer sec:0 usec:373696!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1959846123
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1073124855
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1421105470
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+ads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1421105470
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 20 1421105470
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=20)
+ortp-message-eXosip: timer sec:0 usec:257741!
+ortp-message-eXosip: timer sec:0 usec:257724!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1959846123
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1073124855
+To: Radek <sip:radek@192.168.1.100:9999>;tag=5439138
+Call-ID: 1421105470
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=20)
+ortp-message-eXosip: timer sec:0 usec:223264!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK326320985
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1676112111
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1610261225
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     5
+
+adads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1610261225
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 21 1610261225
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=21)
+ortp-message-eXosip: timer sec:0 usec:70585!
+ortp-message-eXosip: timer sec:0 usec:70567!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: adads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK326320985
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1676112111
+To: Radek <sip:radek@192.168.1.100:9999>;tag=332656411
+Call-ID: 1610261225
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=21)
+ortp-message-eXosip: timer sec:0 usec:22745!
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndreq_retransmission (id=8)
+ortp-message-eXosip: timer sec:4 usec:10000!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK933116696
+From: Radio <sip:radio@192.168.1.104:9999>;tag=204008732
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1575297732
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+ads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1575297732
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 22 1575297732
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=22)
+ortp-message-eXosip: timer sec:3 usec:928910!
+ortp-message-eXosip: timer sec:3 usec:928891!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK933116696
+From: Radio <sip:radio@192.168.1.104:9999>;tag=204008732
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1375790081
+Call-ID: 1575297732
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=22)
+ortp-message-eXosip: timer sec:3 usec:882418!
+ortp-message-bandwidth usage: audio=[d=35.8,u=45.6] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=6.282151	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1161550727
+From: Radio <sip:radio@192.168.1.104:9999>;tag=2025887554
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 31303796
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+dsa
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:31303796
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 23 31303796
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=23)
+ortp-message-free transaction resource 6 2019240393
+ortp-message-free nict resource
+ortp-message-eXosip: timer sec:3 usec:768034!
+ortp-message-eXosip: timer sec:3 usec:768016!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: dsa
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1161550727
+From: Radio <sip:radio@192.168.1.104:9999>;tag=2025887554
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1821471884
+Call-ID: 31303796
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=23)
+ortp-message-eXosip: timer sec:3 usec:731997!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1302073168
+From: Radio <sip:radio@192.168.1.104:9999>;tag=292142474
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 2040364941
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+sad
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:2040364941
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 24 2040364941
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=24)
+ortp-message-eXosip: timer sec:3 usec:610517!
+ortp-message-eXosip: timer sec:3 usec:610498!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: sad
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1302073168
+From: Radio <sip:radio@192.168.1.104:9999>;tag=292142474
+To: Radek <sip:radek@192.168.1.100:9999>;tag=776236702
+Call-ID: 2040364941
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=24)
+ortp-message-eXosip: timer sec:3 usec:581562!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK480311887
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1188858135
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 2010786501
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     2
+
+ds
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:2010786501
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 25 2010786501
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=25)
+ortp-message-eXosip: timer sec:3 usec:432086!
+ortp-message-eXosip: timer sec:3 usec:432067!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ds
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK480311887
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1188858135
+To: Radek <sip:radek@192.168.1.100:9999>;tag=1917066076
+Call-ID: 2010786501
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=25)
+ortp-message-eXosip: timer sec:3 usec:431143!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1763014716
+From: Radio <sip:radio@192.168.1.104:9999>;tag=829579796
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1484456899
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+ads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1484456899
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 26 1484456899
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=26)
+ortp-message-eXosip: timer sec:3 usec:84983!
+ortp-message-eXosip: timer sec:3 usec:84962!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1763014716
+From: Radio <sip:radio@192.168.1.104:9999>;tag=829579796
+To: Radek <sip:radek@192.168.1.100:9999>;tag=2142205211
+Call-ID: 1484456899
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=26)
+ortp-message-eXosip: timer sec:3 usec:80440!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1527656509
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1382586694
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 1237876635
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+ads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:1237876635
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 27 1237876635
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=27)
+ortp-message-eXosip: timer sec:2 usec:932478!
+ortp-message-eXosip: timer sec:2 usec:932459!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1527656509
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1382586694
+To: Radek <sip:radek@192.168.1.100:9999>;tag=322640756
+Call-ID: 1237876635
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=27)
+ortp-message-eXosip: timer sec:2 usec:930136!
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK157887832
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1292922966
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 3793430
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+ads
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:3793430
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 28 3793430
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=28)
+ortp-message-eXosip: timer sec:2 usec:786876!
+ortp-message-eXosip: timer sec:2 usec:786856!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: ads
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK157887832
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1292922966
+To: Radek <sip:radek@192.168.1.100:9999>;tag=785501925
+Call-ID: 3793430
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=28)
+ortp-message-eXosip: timer sec:2 usec:779759!
+ortp-message-bandwidth usage: audio=[d=36.0,u=43.7] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.574911	video=0.000000
+ortp-message-Received message: 
+MESSAGE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1355428014
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1166216878
+To: Radek <sip:radek@192.168.1.100:9999>
+Call-ID: 65947927
+CSeq: 20 MESSAGE
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length:     3
+
+dsa
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:65947927
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 29 65947927
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=29)
+ortp-message-eXosip: timer sec:2 usec:642772!
+ortp-message-eXosip: timer sec:2 usec:642751!
+ortp-message-linphone process event get a message 27
+
+ortp-message-in other_request
+Got message from radio in room 192.168.1.104: dsa
+ortp-message-send SIP message into the call
+
+ortp-warning-could not get a build info to send MESSAGE, maybe no previous call established ?
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1355428014
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1166216878
+To: Radek <sip:radek@192.168.1.100:9999>;tag=22188583
+Call-ID: 65947927
+CSeq: 20 MESSAGE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=29)
+ortp-message-eXosip: timer sec:2 usec:629241!
+ortp-message-alsa: sound/wall clock skew is average=-60.602513 ms, instant=-62 ms
+ortp-warning-echo canceller: we are accumulating too much reference signal, need to throw out 3072 samples
+ortp-message-audio_stream_process_rtcp: interarrival jitter=128 , lost packets percentage since last report=0.000000, round trip time=0.000000 seconds
+ortp-message-MSQosAnalyser: lost_percentage=0.000000, int_jitter=8.000000 ms, rt_prop=0.000000 sec
+ortp-message-MSQosAnalyser: everything is fine.
+ortp-message-MSBitrateController: current state is Init
+ortp-message-bandwidth usage: audio=[d=29.5,u=45.4] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=6.385143	video=0.000000
+ortp-message-bandwidth usage: audio=[d=21.5,u=43.6] video=[d=0.0,u=0.0] kbit/sec
+ortp-message-Thread processing load: audio=5.395291	video=0.000000
+ortp-message-Received message: 
+BYE sip:radek@192.168.1.100:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport;branch=z9hG4bK1650034446
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+Call-ID: 233454488
+CSeq: 21 BYE
+Contact: <sip:radio@192.168.1.104:9999>
+Max-Forwards: 70
+User-Agent: Linphone/3.2.1 (eXosip2/3.3.0)
+Content-Length: 0
+
+
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-MESSAGE REC. CALLID:233454488
+ortp-message-Message received from: 192.168.1.104:9999
+ortp-message-This is a request
+ortp-message-allocating transaction resource 30 233454488
+ortp-message-allocating NIST context
+ortp-message-cb_rcvunkrequest (id=30)
+ortp-message-cb_rcv? (id=30)
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 192.168.1.104:9999;rport=9999;branch=z9hG4bK1650034446
+From: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+To: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+Call-ID: 233454488
+CSeq: 21 BYE
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length: 0
+
+
+ortp-message-cb_snd123456xx (id=30)
+ortp-message-keep alive: 1
+ortp-message-eXosip: timer sec:0 usec:186013!
+ortp-message-eXosip: timer sec:0 usec:185994!
+ortp-message-linphone process event get a message 18
+
+ortp-message-EXOSIP_CALL_MESSAGE_NEW
+ortp-message-linphone process event get a message 25
+
+ortp-message-CALL_CLOSED or CANCELLED
+
+ortp-message-Current call terminated...
+ortp-message-ms_ticker_set_time_func: ticker updated.
+ortp-message-Filter MSRtpRecv is not scheduled; nothing to do.
+ortp-message-oRTP-stats:
+   Audio session's RTP statistics :
+ortp-message- number of rtp packet sent=608
+ortp-message- number of rtp bytes sent=49856 bytes
+ortp-message- number of rtp packet received=592
+ortp-message- number of rtp bytes received=28934 bytes
+ortp-message- number of incoming rtp bytes successfully delivered to the application=28680 
+ortp-message- number of rtp packet lost=0
+ortp-message- number of rtp packets received too late=2
+ortp-message- number of bad formatted rtp packets=0
+ortp-message- number of packet discarded because of queue overflow=0
+ortp-message-ms_filter_unlink: MSAlsaRead:0x1c003e0,0-->MSSpeexEC:0x1bfca20,1
+ortp-message-ms_filter_unlink: MSSpeexEC:0x1bfca20,1-->MSVolume:0x1c00a90,0
+ortp-message-ms_filter_unlink: MSVolume:0x1c00a90,0-->MSSpeexEnc:0x1c00660,0
+ortp-message-ms_filter_unlink: MSSpeexEnc:0x1c00660,0-->MSRtpSend:0x1bfcdd0,0
+ortp-message-ms_filter_unlink: MSRtpRecv:0x1c001e0,0-->MSSpeexDec:0x1c009a0,0
+ortp-message-ms_filter_unlink: MSSpeexDec:0x1c009a0,0-->MSDtmfGen:0x1c002e0,0
+ortp-message-ms_filter_unlink: MSDtmfGen:0x1c002e0,0-->MSVolume:0x1c00c70,0
+ortp-message-ms_filter_unlink: MSVolume:0x1c00c70,0-->MSEqualizer:0x1c00e10,0
+ortp-message-ms_filter_unlink: MSEqualizer:0x1c00e10,0-->MSSpeexEC:0x1bfca20,0
+ortp-message-ms_filter_unlink: MSSpeexEC:0x1bfca20,0-->MSAlsaWrite:0x1c00520,0
+ortp-message-Audio MSTicker thread exiting
+ortp-message-Filter usage statistics:
+ortp-message-Name	Count	Time/tick (ms)	CPU Usage
+ortp-message-MSSpeexEC 978 0.339401 43.4906
+ortp-message-MSAlsaWrite 755 0.233885 23.1433
+ortp-message-MSSpeexEnc 755 0.233308 23.0861
+ortp-message-MSAlsaRead 1223 0.0297186 4.76113
+ortp-message-MSSpeexDec 1223 0.0230726 3.69639
+ortp-message-MSRtpSend 1223 0.00516966 0.828216
+ortp-message-MSRtpRecv 1223 0.00417643 0.669093
+ortp-message-MSVolume 1350 0.00146115 0.258375
+ortp-message-MSDtmfGen 1223 0.000324466 0.0519817
+ortp-message-MSEqualizer 595 0.000189685 0.0147972
+ortp-message-Call 0x1bf4cd0: moving from state LinphoneCallStreamsRunning to LinphoneCallEnd
+ortp-message-Resetting the current call
+ortp-message-Notifying all friends that we are in status 1
+Call is terminated.
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndreq_retransmission (id=8)
+ortp-message-eXosip: timer sec:4 usec:10000!
+Shutting down...
+ortp-message-DNS resolution with 192.168.1.104:9999
+ortp-message-getaddrinfo returned the following addresses:
+ortp-message-192.168.1.104 port 9999
+ortp-message-Message sent: (to dest=192.168.1.104:9999)
+MESSAGE sip:radio@192.168.1.104:9999 SIP/2.0
+Via: SIP/2.0/UDP 192.168.1.100:9999;rport;branch=z9hG4bK872086516
+From: Radek <sip:radek@192.168.1.100:9999>;tag=239149587
+To: Radio <sip:radio@192.168.1.104:9999>;tag=1075505602
+Call-ID: 233454488
+CSeq: 2 MESSAGE
+Contact: <sip:radek@192.168.1.100:9999>
+Content-Type: text/plain
+Max-Forwards: 70
+User-Agent: Linphone/3.5.2 (eXosip2/3.6.0)
+Content-Length:    52
+
+Unfortunately no text commands are implemented yet!
+
+ortp-message-cb_sndreq_retransmission (id=8)
+ortp-message-eXosip: timer sec:4 usec:10000!
+ortp-message-Release a terminated transaction
+ortp-message-free transaction resource 5 233454488
+ortp-message-free ist resource
+ortp-message-free transaction resource 8 233454488
+ortp-message-free nict resource
+ortp-message-free transaction resource 30 233454488
+ortp-message-free nist resource
+ortp-message-free transaction resource 29 65947927
+ortp-message-free nist resource
+ortp-message-free transaction resource 28 3793430
+ortp-message-free nist resource
+ortp-message-free transaction resource 27 1237876635
+ortp-message-free nist resource
+ortp-message-free transaction resource 26 1484456899
+ortp-message-free nist resource
+ortp-message-free transaction resource 25 2010786501
+ortp-message-free nist resource
+ortp-message-free transaction resource 24 2040364941
+ortp-message-free nist resource
+ortp-message-free transaction resource 23 31303796
+ortp-message-free nist resource
+ortp-message-free transaction resource 22 1575297732
+ortp-message-free nist resource
+ortp-message-free transaction resource 21 1610261225
+ortp-message-free nist resource
+ortp-message-free transaction resource 20 1421105470
+ortp-message-free nist resource
+ortp-message-free transaction resource 19 165987494
+ortp-message-free nist resource
+ortp-message-free transaction resource 18 236338945
+ortp-message-free nist resource
+ortp-message-free transaction resource 17 799800593
+ortp-message-free nist resource
+ortp-message-free transaction resource 16 806054276
+ortp-message-free nist resource
+ortp-message-free transaction resource 15 1930115626
+ortp-message-free nist resource
+ortp-message-free transaction resource 14 131281009
+ortp-message-free nist resource
+ortp-message-free transaction resource 13 646459922
+ortp-message-free nist resource
+ortp-message-free transaction resource 12 943185379
+ortp-message-free nist resource
+ortp-message-free transaction resource 11 716581611
+ortp-message-free nist resource
+ortp-message-free transaction resource 10 1221269324
+ortp-message-free nist resource
+ortp-message-free transaction resource 9 480036877
+ortp-message-free nist resource
+ortp-message-free transaction resource 7 1285524034
+ortp-message-free nist resource
+ortp-message-free transaction resource 3 2050457276
+ortp-message-free nist resource
+ortp-message-free transaction resource 1 1438543136
+ortp-message-free nist resource
+Exited
+ortp-message-New PulseAudio context state: PA_CONTEXT_TERMINATED

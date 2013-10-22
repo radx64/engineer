@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/simple_echo.dir/echo/echo.o CMakeFiles/simple_echo.dir/echo/main.o  -o simple_echo -rdynamic -lmuduo_net 

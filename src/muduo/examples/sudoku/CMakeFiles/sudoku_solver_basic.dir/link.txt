@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/sudoku_solver_basic.dir/server_basic.o CMakeFiles/sudoku_solver_basic.dir/sudoku.o  -o sudoku_solver_basic -rdynamic -lmuduo_net 

@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/pingpong_bench.dir/bench.o  -o pingpong_bench -rdynamic -lmuduo_net 

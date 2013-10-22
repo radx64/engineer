@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/ProcessInfo.h
+muduo/base/Types.h
+-
+muduo/base/Timestamp.h
+-
+vector
+-
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/Timestamp.h
+muduo/base/copyable.h
+-
+muduo/base/Types.h
+-
+boost/operators.hpp
+-
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/Types.h
+stdint.h
+-
+string
+-
+ext/vstring.h
+-
+ext/vstring_fwd.h
+-
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/copyable.h
+
+/home/radek/Pulpit/proj-inz/engineer/src/muduo/muduo/base/tests/ProcessInfo_test.cc
+muduo/base/ProcessInfo.h
+-
+stdio.h
+-
+inttypes.h
+-
+

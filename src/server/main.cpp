@@ -3,42 +3,58 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "udpSocket.hpp"
 
-void* create_network_thread(void* _arg)
+#include <muduo/base/Logging.h>
+#include <muduo/base/Mutex.h>
+#include <muduo/net/EventLoop.h>
+#include <muduo/net/TcpServer.h>
+
+#include <boost/bind.hpp>
+
+#include "server.cc"
+
+
+
+/**
+ * TCP server for data other than Voice like RS232 communication etc.
+ */
+void* createTCPThread(void* _arg)
 {
 	printf("Network not fully implemented yet!\n");
-	udpSocket udp;
-	if (!udp.createSocket()) perror("Couldn't create socket!");
+
+	  LOG_INFO << "pid = " << getpid();
+
+	    EventLoop loop;
+	    uint16_t port = static_cast<uint16_t>(9090);
+	    InetAddress serverAddr(port);
+	    ChatServer server(&loop, serverAddr);
+	    server.start();
+	    loop.loop();
+
+
 	return (void*)NULL;
 }
 
-void* create_sound_input_thread(void* _arg)
+/**
+ * SIP server accepting calls from clients
+ */
+void* createVOIPThread(void* _arg)
 {
 	printf("Sound input not implemented yet!\n");
 	return (void*)NULL;
 }
 
-void* create_sound_output_thread(void* _arg)
-{
-	printf("Sound output not implemented yet!\n");
-	return (void*)NULL;
-}	
-
 int main(int argc, char* argv[])
 {
 	printf("%s\n","Hello World from server!");
-	pthread_t id[3];
-	pthread_create(&id[0], NULL, create_network_thread, NULL);
-	pthread_create(&id[1], NULL, create_sound_input_thread, NULL);
-	pthread_create(&id[2], NULL, create_sound_output_thread, NULL);
+	pthread_t id[2];
+	pthread_create(&id[0], NULL, createTCPThread, NULL);
+	pthread_create(&id[1], NULL, createVOIPThread, NULL);
 	sleep(2);
 	void *end;
-	for(int i=0;i<3;++i)
+	for(int i=0;i<2;++i)
 	{
-		pthread_join(id[0], &end);
-		pthread_join(id[1], &end);
-		pthread_join(id[2], &end);
+		pthread_join(id[i], &end);
 	}
 	return 0;
 }

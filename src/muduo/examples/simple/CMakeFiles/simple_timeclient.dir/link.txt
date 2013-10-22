@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/simple_timeclient.dir/timeclient/timeclient.o  -o simple_timeclient -rdynamic -lmuduo_net 
