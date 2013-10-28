@@ -1,9 +1,3 @@
-MUDUO_DIRECTORY ?= /home/radek/Pulpit/proj-inz/engineer/src/build/debug-install
-#MUDUO_DIRECTORY ?= $(HOME)/build/install
-MUDUO_INCLUDE = $(MUDUO_DIRECTORY)/include
-MUDUO_LIBRARY = $(MUDUO_DIRECTORY)/lib
-
-
 # the compiler: gcc for C program, define as g++ for C++
 CC= g++
 
@@ -11,9 +5,9 @@ CC= g++
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
 #  -pthreads
-CFLAGS= -g -Wall -I$(MUDUO_INCLUDE) -L$(MUDUO_LIBRARY)
+CFLAGS= -g -Wall
 
-LFLAGS= -L$(MUDUO_LIBRARY) -lmuduo_net -lmuduo_base -lpthread -lrt 
+LFLAGS= -lpthread -lrt 
 # the build target executable:
 TARGET= server
 
