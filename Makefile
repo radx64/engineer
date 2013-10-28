@@ -1,9 +1,9 @@
 all: 
-	make -f src/voip/client/Makefile
-	make -f src/voip/server/Makefile
-	make -f src/server/Makefile
-	make -f src/network/client/Makefile
-	make -f src/network/server/Makefile
+	cd src/voip/client && make
+	cd src/voip/server && make
+	cd src/server && make
+	cd src/network/client && make
+	cd src/network/server && make
 
 test:
 	@echo "No test defined yet"

@@ -4,33 +4,12 @@
 #include <unistd.h>
 #include <pthread.h>
 
-#include <muduo/base/Logging.h>
-#include <muduo/base/Mutex.h>
-#include <muduo/net/EventLoop.h>
-#include <muduo/net/TcpServer.h>
-
-#include <boost/bind.hpp>
-
-#include "server.cc"
-
-
-
 /**
  * TCP server for data other than Voice like RS232 communication etc.
  */
 void* createTCPThread(void* _arg)
 {
 	printf("Network not fully implemented yet!\n");
-
-	  LOG_INFO << "pid = " << getpid();
-
-	    EventLoop loop;
-	    uint16_t port = static_cast<uint16_t>(9090);
-	    InetAddress serverAddr(port);
-	    ChatServer server(&loop, serverAddr);
-	    server.start();
-	    loop.loop();
-
 
 	return (void*)NULL;
 }

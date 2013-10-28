@@ -7,7 +7,7 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall
 
-LFLAGS= -lpthread -lrt 
+LFLAGS= -pthread -lrt 
 # the build target executable:
 TARGET= server
 
