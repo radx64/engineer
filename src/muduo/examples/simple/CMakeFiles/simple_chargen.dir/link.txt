@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/simple_chargen.dir/chargen/chargen.o CMakeFiles/simple_chargen.dir/chargen/main.o  -o simple_chargen -rdynamic -lmuduo_net 

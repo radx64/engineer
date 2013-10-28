@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/netty_echo_server.dir/server.o  -o netty_echo_server -rdynamic -lmuduo_net 

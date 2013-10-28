@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/protobuf_dispatcher_lite_test.dir/dispatcher_lite_test.o  -o protobuf_dispatcher_lite_test  -L/home/radek/Pulpit/proj-inz/engineer/src/muduo/examples/protobuf/codec -rdynamic libquery_proto.a -lprotobuf -lpthread 

@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/simple_chargenclient.dir/chargenclient/chargenclient.o  -o simple_chargenclient -rdynamic -lmuduo_net 

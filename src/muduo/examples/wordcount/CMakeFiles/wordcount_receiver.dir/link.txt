@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/wordcount_receiver.dir/receiver.o  -o wordcount_receiver -rdynamic -lmuduo_net 

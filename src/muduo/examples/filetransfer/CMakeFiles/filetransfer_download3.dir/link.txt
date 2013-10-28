@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/filetransfer_download3.dir/download3.o  -o filetransfer_download3 -rdynamic -lmuduo_net 

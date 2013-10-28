@@ -1,2 +1,0 @@
-/usr/bin/ar cr libecho_proto.a  CMakeFiles/echo_proto.dir/echo.pb.o
-/usr/bin/ranlib libecho_proto.a

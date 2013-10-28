@@ -1,2 +1,0 @@
-/usr/bin/ar cr libresolver_proto.a  CMakeFiles/resolver_proto.dir/resolver.pb.o
-/usr/bin/ranlib libresolver_proto.a

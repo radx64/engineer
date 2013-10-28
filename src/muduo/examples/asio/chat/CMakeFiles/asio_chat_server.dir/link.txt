@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/asio_chat_server.dir/server.o  -o asio_chat_server -rdynamic -lmuduo_net 
