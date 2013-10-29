@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../socket/TcpSocket.hpp"
+#include "TcpSocket.hpp"
 
 
 void handleConnection(int desc)

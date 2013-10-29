@@ -9,11 +9,11 @@ CFLAGS= -g -Wall
 
 LFLAGS= -lpthread -lrt -L ../socket/ -ltcp -static
 # the build target executable:
-TARGET= client
+TARGET= server
 
 OBJECTS:= $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
-all : lib $(TARGET) 
+all : $(TARGET) lib
 
 $(TARGET) : $(OBJECTS)
 	@echo "Linking "$(TARGET) "from" $(OBJECTS) 
@@ -38,7 +38,8 @@ config:
 
 lib:
 	@echo "Preparing socket library"
-	cd ../socket/ && make
+	@cd ../socket/ && make
 	@echo "Socket library done"
 
 .PHONY: clean help configure config lib
+

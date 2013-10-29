@@ -7,17 +7,17 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall
 
-LFLAGS= -lpthread -lrt -L ../socket/ -ltcp -static
+LFLAGS= -lpthread -lrt -l "../socket/libtcp.a"
 # the build target executable:
 TARGET= client
 
 OBJECTS:= $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
-all : lib $(TARGET) 
+all : $(TARGET)
 
 $(TARGET) : $(OBJECTS)
 	@echo "Linking "$(TARGET) "from" $(OBJECTS) 
-	$(CC) -o $(TARGET) $(OBJECTS) $(LFLAGS)
+	$(CC) $(LFLAGS) -o $(TARGET) $(OBJECTS)
 
 %.o : %.cpp
 	@echo "Compiling" $< "to" $@
@@ -36,9 +36,4 @@ config:
 	@echo "     LFLAGS:" $(LFLAGS)
 	@echo "     TARGET:" $(TARGET)
 
-lib:
-	@echo "Preparing socket library"
-	cd ../socket/ && make
-	@echo "Socket library done"
-
-.PHONY: clean help configure config lib
+.PHONY: clean help configure config

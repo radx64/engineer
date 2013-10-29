@@ -1,5 +1,6 @@
 # the compiler: gcc for C program, define as g++ for C++
 CC= g++
+AR= ar rcs
 
 # compiler flags:
 #  -g    adds debugging information to the executable file
@@ -7,17 +8,16 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall
 
-LFLAGS= -lpthread -lrt -L ../socket/ -ltcp -static
-# the build target executable:
-TARGET= client
+# compile library
+TARGET= libtcp.a
 
 OBJECTS:= $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
-all : lib $(TARGET) 
+all : $(TARGET)
 
 $(TARGET) : $(OBJECTS)
-	@echo "Linking "$(TARGET) "from" $(OBJECTS) 
-	$(CC) -o $(TARGET) $(OBJECTS) $(LFLAGS)
+	@echo "Compressing to "$(TARGET) "from" $(OBJECTS) 
+	$(AR) $(TARGET) $(OBJECTS)
 
 %.o : %.cpp
 	@echo "Compiling" $< "to" $@
@@ -33,12 +33,6 @@ configure: config
 config:
 	@echo "Make configuration:"
 	@echo "     CFLAGS:" $(CFLAGS)
-	@echo "     LFLAGS:" $(LFLAGS)
 	@echo "     TARGET:" $(TARGET)
 
-lib:
-	@echo "Preparing socket library"
-	cd ../socket/ && make
-	@echo "Socket library done"
-
-.PHONY: clean help configure config lib
+.PHONY: clean help configure config
