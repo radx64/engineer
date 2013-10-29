@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include "../socket/TcpSocket.hpp"
 
-
 void handleConnection(int desc)
 {
 	printf("Connection accepted and should be handled here");
@@ -12,13 +11,22 @@ void handleConnection(int desc)
 
 int main(int argc, char* argv[])
 {
-	char buffer[6] = "abcde";
+	printf("Hello World in Client\n");
 	char address[] = "127.0.0.1";
 	TcpSocket tcpsocket;
+	tcpsocket.msg.type = 1;
 	tcpsocket.setRemotePort(5000);
 	tcpsocket.create();
 	tcpsocket.connect(address);
-	tcpsocket.send(buffer,6);
-	printf("Hello World in Client\n");
+	while(1)
+	{
+		char buf[32];
+		scanf("%s",buf);
+		sprintf(tcpsocket.msg.data,"%s",buf);
+		tcpsocket.send(tcpsocket.msg,sizeof(tcpsocket.msg));
+		unsigned short size;
+		tcpsocket.recv(tcpsocket.msg,size);
+		printf("Recived answer from server %s\n",tcpsocket.msg.data);
+	}
 	return 0;
 }

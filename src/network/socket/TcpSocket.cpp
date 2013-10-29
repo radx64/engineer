@@ -40,7 +40,7 @@ void TcpSocket::create(void)
 	#ifdef DEBUG
 	printf("Creating socket...\n");
 	#endif
-	if ((localSocketDescriptor = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) error("socket() failed");
+	if ((listenSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) error("socket() failed");
 }
 
 void TcpSocket::bind(void)
@@ -54,7 +54,7 @@ printf("Binding socket...\n");
     localHostAddress.sin_addr.s_addr = htonl(INADDR_ANY); 	/* Any incoming interface */
     localHostAddress.sin_port = htons(getLocalPort());  /* Local port */
 
-    if (::bind(localSocketDescriptor, (struct sockaddr *) &localHostAddress, sizeof(localHostAddress)) < 0) error("bind() failed");
+    if (::bind(listenSocket, (struct sockaddr *) &localHostAddress, sizeof(localHostAddress)) < 0) error("bind() failed");
 }
 void TcpSocket::connect(char* remoteAddress)
 {
@@ -67,7 +67,8 @@ printf("Connecting to socket...\n");
     remoteHostAddress.sin_port        = htons(getRemotePort()); /* Server port */
 
     /* Establish the connection to the echo server */
-    if (::connect(localSocketDescriptor, (struct sockaddr *) &remoteHostAddress, sizeof(remoteHostAddress)) < 0) error("connect() failed");
+    if (::connect(listenSocket, (struct sockaddr *) &remoteHostAddress, sizeof(remoteHostAddress)) < 0) error("connect() failed");
+    messageSocket = listenSocket; /* For send recv functions compatibility*/
 }
 
 void TcpSocket::listen(void)
@@ -75,11 +76,11 @@ void TcpSocket::listen(void)
 #ifdef DEBUG
 printf("Listening for connections...\n");
 #endif
-	if (::listen(localSocketDescriptor, MAXPENDING) < 0) error("listen() failed");
+	if (::listen(listenSocket, MAXPENDING) < 0) error("listen() failed");
 }
 
 
-void TcpSocket::accept(void (*callbackForHandlingConnection)(int))
+void TcpSocket::accept(void (*callbackForHandlingConnection)(void))
 {
 #ifdef DEBUG
 printf("Accepting connection...\n");
@@ -89,20 +90,18 @@ printf("Accepting connection...\n");
 	remoteAddressLength = sizeof(remoteHostAddress);
 
 	/* Wait for a client to connect */
-	if ((remoteSocketDescriptor = ::accept(localSocketDescriptor, (struct sockaddr *) &remoteHostAddress, &remoteAddressLength)) < 0) error("accept() failed");
-	callbackForHandlingConnection(remoteSocketDescriptor);
+	if ((messageSocket = ::accept(listenSocket, (struct sockaddr *) 0, 0)) < 0) error("accept() failed");
+	callbackForHandlingConnection();
 }
 
-void TcpSocket::send(char* dataBuffer, unsigned short dataSize)
+void TcpSocket::send(message &dataBuffer, unsigned short dataSize)
 {
-				//remoteSocketDescriptor??
-	if (::send(localSocketDescriptor, dataBuffer, dataSize, 0) != dataSize) error("send() failed");
-
+	if (::send(messageSocket, &dataBuffer, sizeof(dataBuffer), 0) < 0) error("send() failed");
 }
 
-void TcpSocket::recv(char* dataBuffer, unsigned short &dataSize)
+void TcpSocket::recv(message &dataBuffer, unsigned short &dataSize)
 {
-    if ((dataSize = ::recv(remoteSocketDescriptor, dataBuffer, MSG_SIZE, 0)) < 0) error("recv() failed");
+    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), MSG_WAITALL)) < 0) error("recv() failed");
 }
 
 

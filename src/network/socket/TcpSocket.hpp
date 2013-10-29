@@ -7,6 +7,13 @@
 
 #define MSG_SIZE 32
 
+typedef struct
+{
+	int type;
+	char data[MSG_SIZE];
+} message;
+
+
 class TcpSocket
 {
 public:
@@ -20,17 +27,17 @@ public:
     void bind(void);
     void connect(char* remoteAddress);
     void listen(void);
-    void accept(void (*callbackForHandlingConnection)(int));
-    void recv(char* dataBuffer, unsigned short &dataSize);
-    void send(char* dataBuffer, unsigned short dataSize);
+    void accept(void (*callbackForHandlingConnection)(void));
+    void recv(message &dataBuffer, unsigned short &dataSize);
+    void send(message &dataBuffer, unsigned short dataSize);
+    message msg;
 
 private:
-	char dataBuffer[MSG_SIZE];
-    int localSocketDescriptor;                    /* Socket descriptor for server */
-    int remoteSocketDescriptor;                    /* Socket descriptor for client */
-    struct sockaddr_in localHostAddress; /* Local address */
-    struct sockaddr_in remoteHostAddress; /* Client address */
-    unsigned short localPort;     		/* Server port */
+    int listenSocket;                 	/* Socket descriptor for server */
+    int messageSocket;                	/* Socket descriptor for client */
+    struct sockaddr_in localHostAddress; 		/* Local address */
+    struct sockaddr_in remoteHostAddress; 		/* Client address */
+    unsigned short localPort;     				/* Server port */
     unsigned short remotePort;
     unsigned int remoteAddressLength;            /* Length of client address data structure */
 };
