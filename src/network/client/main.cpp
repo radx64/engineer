@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 		tcpsocket.send(tcpsocket.msg);
 		unsigned short size;
 		tcpsocket.recv(tcpsocket.msg,size);
-		printf("Recived answer from server %s\n",tcpsocket.msg.data);
+		printf("Recived %d bytes of answer %s from server\n",size,tcpsocket.msg.data);
 	}
 	return 0;
 }

@@ -39,7 +39,7 @@ void TcpSocket::create(void)
 	#ifdef DEBUG
 	printf("Creating socket...\n");
 	#endif
-	if ((listenSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) error("socket() failed");
+	if ((listenSocket = socket(PF_INET, SOCK_STREAM, 0)) < 0) error("socket() failed");
 }
 
 void TcpSocket::bind(void)
@@ -100,7 +100,7 @@ void TcpSocket::send(message &dataBuffer)
 
 void TcpSocket::recv(message &dataBuffer, unsigned short &dataSize)
 {
-    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), 0)) < 0) error("recv() failed"); //MSG_WAITALL
+    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), MSG_WAITALL)) < 0) error("recv() failed"); //MSG_WAITALL
 }
 
 

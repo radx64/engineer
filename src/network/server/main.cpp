@@ -36,11 +36,15 @@ void handleConnection()
 void* createTCPThread(void* _arg)
 {
 	printf("Network not fully implemented yet!\n");
+	signal(SIGPIPE, SIG_IGN);
 	tcpsocket.setLocalPort(5000);
 	tcpsocket.create();
 	tcpsocket.bind();
 	tcpsocket.listen();
-	tcpsocket.accept(handleConnection);
+	while(1)
+	{
+		tcpsocket.accept(handleConnection);
+	}
 	return (void*)NULL;
 }
 
@@ -63,7 +67,6 @@ int main(int argc, char* argv[])
 {
 	printf("Hello World in Server\n");
 	pthread_t id[2];
-	signal(SIGPIPE, SIG_IGN);
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
 	while(1)

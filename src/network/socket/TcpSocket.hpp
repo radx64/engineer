@@ -5,7 +5,7 @@
 #include <string.h>     /* for memset() */
 #include <unistd.h>     /* for close() */
 
-#define MSG_SIZE 128
+#define MSG_SIZE 64
 
 typedef struct
 {
