@@ -100,7 +100,7 @@ void TcpSocket::send(message &dataBuffer)
 
 void TcpSocket::recv(message &dataBuffer, unsigned short &dataSize)
 {
-    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), MSG_WAITALL)) < 0) error("recv() failed");
+    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), 0)) < 0) error("recv() failed"); //MSG_WAITALL
 }
 
 
