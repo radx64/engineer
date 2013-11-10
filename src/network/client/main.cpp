@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 		char buf[32];
 		scanf("%s",buf);
 		sprintf(tcpsocket.msg.data,"%s",buf);
-		tcpsocket.send(tcpsocket.msg,sizeof(tcpsocket.msg));
+		tcpsocket.send(tcpsocket.msg);
 		unsigned short size;
 		tcpsocket.recv(tcpsocket.msg,size);
 		printf("Recived answer from server %s\n",tcpsocket.msg.data);

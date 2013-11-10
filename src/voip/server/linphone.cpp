@@ -73,12 +73,13 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
                         printf("Unhandled notification %i\n",cstate);
         }
 }
-
+/*
 static void text_received(LinphoneCore *lc, LinphoneChatRoom *room, const LinphoneAddress *from, const char *message)
 {
 	printf("Got message from %s in room %s: %s\n", linphone_address_get_username(from), linphone_address_get_domain(from) ,message);
 	linphone_chat_room_send_message(room,"Hi! I'm server!\n");
 }
+*/
 
 int main(int argc, char *argv[]){
         LinphoneCoreVTable vtable={0};
@@ -109,8 +110,8 @@ int main(int argc, char *argv[]){
 
         linphone_core_iterate(lc);
 
-        LinphoneChatRoom* chat_room = linphone_core_create_chat_room(lc,"sip:radek@192.168.1.100:9998");
-        linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
+        //LinphoneChatRoom* chat_room = linphone_core_create_chat_room(lc,"sip:radek@192.168.1.100:9998");
+        //linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
 
         /* main loop for receiving notifications and doing background linphonecore work: */
         while(running){

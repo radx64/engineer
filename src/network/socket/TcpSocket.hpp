@@ -5,7 +5,7 @@
 #include <string.h>     /* for memset() */
 #include <unistd.h>     /* for close() */
 
-#define MSG_SIZE 32
+#define MSG_SIZE 256
 
 typedef struct
 {
@@ -29,7 +29,7 @@ public:
     void listen(void);
     void accept(void (*callbackForHandlingConnection)(void));
     void recv(message &dataBuffer, unsigned short &dataSize);
-    void send(message &dataBuffer, unsigned short dataSize);
+    void send(message &dataBuffer);
     message msg;
 
 private:

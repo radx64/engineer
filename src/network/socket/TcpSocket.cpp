@@ -94,7 +94,7 @@ printf("Accepting connection...\n");
 	callbackForHandlingConnection();
 }
 
-void TcpSocket::send(message &dataBuffer, unsigned short dataSize)
+void TcpSocket::send(message &dataBuffer)
 {
 	if (::send(messageSocket, &dataBuffer, sizeof(dataBuffer), 0) < 0) error("send() failed");
 }
