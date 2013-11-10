@@ -2,11 +2,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <pthread.h>
 #include "../socket/TcpSocket.hpp"
 #include "../voip/VoipPhone.hpp"
 
 TcpSocket tcpsocket;
 VoipPhone voipPhone(9999);
+
+void sigpipeIgnore()
+{
+	printf("Sigpipe caugth\n");
+}
 
 void handleConnection()
 {
@@ -14,27 +22,53 @@ void handleConnection()
 	unsigned short size;
 	while(1)
 	{
+		printf("Waiting for data\n");
 		tcpsocket.recv(tcpsocket.msg,size);
 		printf("Got message %s\nSending response...\n",tcpsocket.msg.data);
-		sprintf(tcpsocket.msg.data,"Nothing yet!\n");
+		sprintf(tcpsocket.msg.data,"Nothing yet implemented!\n");
 		tcpsocket.send(tcpsocket.msg);
 	}
 }
 
-int main(int argc, char* argv[])
+/**
+ * TCP server for data other than Voice like RS232 communication etc.
+ */
+void* createTCPThread(void* _arg)
 {
-	printf("Hello World in Server\n");
+	printf("Network not fully implemented yet!\n");
+	tcpsocket.setLocalPort(5000);
+	tcpsocket.create();
+	tcpsocket.bind();
+	tcpsocket.listen();
+	tcpsocket.accept(handleConnection);
+	return (void*)NULL;
+}
+
+/**
+ * SIP server accepting calls from clients
+ */
+void* createVOIPThread(void* _arg)
+{
+	printf("Sound input not implemented yet!\n");
 	while(1)
 	{
 		voipPhone.loop();
 		ms_usleep(50000);
 	}
 	voipPhone.terminate();
+	return (void*)NULL;
+}
 
-	tcpsocket.setLocalPort(5000);
-	tcpsocket.create();
-	tcpsocket.bind();
-	tcpsocket.listen();
-	tcpsocket.accept(handleConnection);
+int main(int argc, char* argv[])
+{
+	printf("Hello World in Server\n");
+	pthread_t id[2];
+	signal(SIGPIPE, SIG_IGN);
+	pthread_create(&id[0], NULL, createTCPThread, NULL);
+	pthread_create(&id[1], NULL, createVOIPThread, NULL);
+	while(1)
+	{
+		sleep(1);
+	}
 	return 0;
 }

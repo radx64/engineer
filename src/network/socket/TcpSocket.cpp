@@ -2,7 +2,6 @@
 #include "Error.hpp"
 
 #define MAXPENDING 10
-#define MSG_SIZE 32
 #define DEBUG
 
 TcpSocket::TcpSocket()
