@@ -11,7 +11,8 @@ TcpSocket::TcpSocket()
 
 TcpSocket::~TcpSocket()
 {
-
+	close(messageSocket);
+	close(listenSocket);
 }
 
 void TcpSocket::setLocalPort(unsigned short port)

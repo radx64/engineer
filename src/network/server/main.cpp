@@ -11,21 +11,32 @@
 TcpSocket tcpsocket;
 VoipPhone voipPhone(9999);
 
-void sigpipeIgnore()
+bool running = true;
+
+void sigpipeIgnore(int signalnum)
 {
 	printf("Sigpipe caugth\n");
 }
 
+void sigInterruptHandle(int sigalnum)
+{
+	running = false;
+}
+
 void handleConnection()
 {
-	printf("Connection accepted and should be handled here\n");
 	unsigned short size;
-	while(1)
+	while(running)
 	{
 		printf("Waiting for data\n");
 		tcpsocket.recv(tcpsocket.msg,size);
+		if(0 == size)
+		{
+			printf("Connection is closing by remote host...\n");
+			break;
+		}
 		printf("Got message %s\nSending response...\n",tcpsocket.msg.data);
-		sprintf(tcpsocket.msg.data,"Nothing yet implemented!\n");
+		sprintf(tcpsocket.msg.data,"Nothing yet implemented!");
 		tcpsocket.send(tcpsocket.msg);
 	}
 }
@@ -35,16 +46,15 @@ void handleConnection()
  */
 void* createTCPThread(void* _arg)
 {
-	printf("Network not fully implemented yet!\n");
-	signal(SIGPIPE, SIG_IGN);
 	tcpsocket.setLocalPort(5000);
 	tcpsocket.create();
 	tcpsocket.bind();
 	tcpsocket.listen();
-	while(1)
+	while(running)
 	{
 		tcpsocket.accept(handleConnection);
 	}
+	printf("Ending TCP Thread\n");
 	return (void*)NULL;
 }
 
@@ -53,12 +63,12 @@ void* createTCPThread(void* _arg)
  */
 void* createVOIPThread(void* _arg)
 {
-	printf("Sound input not implemented yet!\n");
-	while(1)
+	while(running)
 	{
 		voipPhone.loop();
 		ms_usleep(50000);
 	}
+	printf("Ending VOIP Thread\n");
 	voipPhone.terminate();
 	return (void*)NULL;
 }
@@ -66,12 +76,15 @@ void* createVOIPThread(void* _arg)
 int main(int argc, char* argv[])
 {
 	printf("Hello World in Server\n");
+	signal(SIGPIPE, sigpipeIgnore);
+	signal(SIGINT, sigInterruptHandle);
 	pthread_t id[2];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
-	while(1)
+	while(running)
 	{
 		sleep(1);
 	}
+	printf("Ending main Thread\n");
 	return 0;
 }
