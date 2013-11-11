@@ -1,3 +1,6 @@
+#ifndef TCPSOCKET_H
+#define TCPSOCKET_H
+
 #include <stdio.h>      /* for printf() and fprintf() */
 #include <sys/socket.h> /* for socket(), bind(), and connect() */
 #include <arpa/inet.h>  /* for sockaddr_in and inet_ntoa() */
@@ -41,3 +44,4 @@ private:
     unsigned short remotePort;
     unsigned int remoteAddressLength;            /* Length of client address data structure */
 };
+#endif  /*  TCPSOCKET_H */
