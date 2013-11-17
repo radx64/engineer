@@ -7,13 +7,15 @@
 #include <stdlib.h>     /* for atoi() and exit() */
 #include <string.h>     /* for memset() */
 #include <unistd.h>     /* for close() */
+#include "MsgTypes.h"
 
-#define MSG_SIZE 64
+#define MAX_MSG_SIZE 128
 
 typedef struct
 {
 	int type;
-	char data[MSG_SIZE];
+	char size;	//size of data if data is transmited;
+	char data[MAX_MSG_SIZE];
 } message;
 
 
