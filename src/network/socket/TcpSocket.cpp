@@ -40,7 +40,11 @@ void TcpSocket::create(void)
 	#ifdef DEBUG
 	printf("Creating socket...\n");
 	#endif
-	if ((listenSocket = socket(PF_INET, SOCK_STREAM, 0)) < 0) error("socket() failed");
+	if ((listenSocket = socket(PF_INET, SOCK_STREAM, 0)) < 0)
+	{
+		error("socket() failed");
+		socketStatus = TcpSocket::CREATE_FAILED;
+	}
 }
 
 void TcpSocket::bind(void)
@@ -54,7 +58,11 @@ printf("Binding socket...\n");
     localHostAddress.sin_addr.s_addr = htonl(INADDR_ANY); 	/* Any incoming interface */
     localHostAddress.sin_port = htons(getLocalPort());  /* Local port */
 
-    if (::bind(listenSocket, (struct sockaddr *) &localHostAddress, sizeof(localHostAddress)) < 0) error("bind() failed");
+    if (::bind(listenSocket, (struct sockaddr *) &localHostAddress, sizeof(localHostAddress)) < 0)
+    {
+    	error("bind() failed");
+    	socketStatus = TcpSocket::BIND_FAILED;
+    }
 }
 void TcpSocket::connect(char* remoteAddress)
 {
@@ -67,7 +75,15 @@ printf("Connecting to socket...\n");
     remoteHostAddress.sin_port        = htons(getRemotePort()); /* Server port */
 
     /* Establish the connection to the echo server */
-    if (::connect(listenSocket, (struct sockaddr *) &remoteHostAddress, sizeof(remoteHostAddress)) < 0) error("connect() failed");
+    if (::connect(listenSocket, (struct sockaddr *) &remoteHostAddress, sizeof(remoteHostAddress)) < 0)
+    {
+    	error("connect() failed");
+    	socketStatus = TcpSocket::CONNECT_FAILED;
+    }
+    else
+    {
+    	socketStatus = TcpSocket::CONNECTION_OK;
+    }
     messageSocket = listenSocket; /* For send recv functions compatibility*/
 }
 
@@ -76,7 +92,11 @@ void TcpSocket::listen(void)
 #ifdef DEBUG
 printf("Listening for connections...\n");
 #endif
-	if (::listen(listenSocket, MAXPENDING) < 0) error("listen() failed");
+	if (::listen(listenSocket, MAXPENDING) < 0)
+	{
+		error("listen() failed");
+		socketStatus = TcpSocket::LISTEN_FAILED;
+	}
 }
 
 
@@ -90,18 +110,30 @@ printf("Accepting connection...\n");
 	remoteAddressLength = sizeof(remoteHostAddress);
 
 	/* Wait for a client to connect */
-	if ((messageSocket = ::accept(listenSocket, (struct sockaddr *) 0, 0)) < 0) error("accept() failed");
+	if ((messageSocket = ::accept(listenSocket, (struct sockaddr *) 0, 0)) < 0)
+	{
+		error("accept() failed");
+		socketStatus = TcpSocket::ACCEPT_FAILED;
+	}
 	callbackForHandlingConnection();
 }
 
 void TcpSocket::send(message &dataBuffer)
 {
-	if (::send(messageSocket, &dataBuffer, sizeof(dataBuffer), 0) < 0) error("send() failed");
+	if (::send(messageSocket, &dataBuffer, sizeof(dataBuffer), 0) < 0)
+	{
+		error("send() failed");
+		socketStatus = TcpSocket::SEND_FAILED;
+	}
 }
 
 void TcpSocket::recv(message &dataBuffer, unsigned short &dataSize)
 {
-    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), MSG_WAITALL)) < 0) error("recv() failed"); //MSG_WAITALL
+    if ((dataSize = ::recv(messageSocket, &dataBuffer, sizeof(dataBuffer), MSG_WAITALL)) < 0)
+    {
+    	error("recv() failed"); //MSG_WAITALL
+    	socketStatus = TcpSocket::RECIEVE_FAILED;
+    }
 }
 
 

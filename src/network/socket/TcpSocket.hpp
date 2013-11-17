@@ -22,6 +22,19 @@ typedef struct
 class TcpSocket
 {
 public:
+
+	enum CONNECTION_STATUS
+	{
+		CONNECTION_OK,
+		CREATE_FAILED,
+		BIND_FAILED,
+		CONNECT_FAILED,
+		LISTEN_FAILED,
+		ACCEPT_FAILED,
+		SEND_FAILED,
+		RECIEVE_FAILED
+	};
+
 	TcpSocket();
 	~TcpSocket();
 	void setLocalPort(unsigned short port);
@@ -36,6 +49,7 @@ public:
     void recv(message &dataBuffer, unsigned short &dataSize);
     void send(message &dataBuffer);
     message msg;
+    unsigned char socketStatus;
 
 private:
     int listenSocket;                 	/* Socket descriptor for server */

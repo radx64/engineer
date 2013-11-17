@@ -1,3 +1,5 @@
+#ifndef VOIPPHONE_H
+#define VOIPPHONE_H
 #include <linphone/linphonecore.h>
 
 class VoipPhone
@@ -15,6 +17,8 @@ public:
 	void setPort(int port);
 	int getPort(void);
 	void loop(void);
-	void terminate();
+	void terminate(void);
+	void makeCall(char *destination);
 
 };
+#endif //VOIPPHONE_H

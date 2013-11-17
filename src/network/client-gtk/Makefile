@@ -7,7 +7,7 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall `pkg-config --cflags gtkmm-3.0`
 
-LFLAGS= `pkg-config --libs gtkmm-3.0` -lpthread -lrt -L ../socket/ -ltcp 
+LFLAGS= `pkg-config --libs gtkmm-3.0` -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -llinphone -lmediastreamer
 # the build target executable:
 TARGET= client
 
@@ -40,5 +40,8 @@ lib:
 	@echo "Preparing socket library"
 	cd ../socket/ && make
 	@echo "Socket library done"
+	@echo "Preparing voip library"
+	cd ../voip/ && make
+	@echo "Socket voip done"
 
 .PHONY: clean help configure config lib

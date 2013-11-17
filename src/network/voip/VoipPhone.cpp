@@ -70,8 +70,17 @@ void VoipPhone::loop(void)
 	linphone_core_iterate(lc);
 }
 
-void VoipPhone::terminate()
+void VoipPhone::terminate(void)
 {
-    linphone_core_terminate_call(lc,call);
+    linphone_core_terminate_call(lc, call);
     linphone_call_unref(call);
+}
+
+void VoipPhone::makeCall(char *destination)
+{
+	call=linphone_core_invite(lc,destination);
+    if (call==NULL){
+            printf("Could not place call to %s\n",destination);
+    }else printf("Call to %s is in progress...",destination);
+    linphone_call_ref(call);
 }
