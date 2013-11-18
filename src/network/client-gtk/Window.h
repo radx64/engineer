@@ -99,7 +99,14 @@ protected:
 
 	//VOIP frame
 	Gtk::Frame m_SoundFrame;
-
+	Gtk::Table m_SoundTable;
+	Gtk::Label m_SoundLatencyLabel;
+	Gtk::Label m_SoundJittterLabel;
+	Gtk::Label m_SoundVolumeLabel;
+	Gtk::Label m_SoundLatencyValueLabel;
+	Gtk::Label m_SoundJittterValueLabel;
+	Gtk::Label m_SoundVolumeValueLabel;
+	Gtk::Button m_PushToTalkButton;
 	//End of VOIP frame
 	TcpSocket *socket;
 

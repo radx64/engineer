@@ -6,13 +6,15 @@ namespace Msg
 
 	enum MsgTypes
 	{
-		UNKNOWN,
-		FREQUENCY,
-		DATA,
-		PUSHTOTALK_ON,
-		PUSHTOTALK_OFF,
-		GPIO_ON,
-		GPIO_OFF,
+		UNKNOWN,		//not sure for what, just in case
+		FREQUENCY,		//to set rig frequency
+		RS232C,			//to be solved later (maybe not needed)
+		NOP,			//to say that side is nothing to say
+		OTHER_DATA,
+		PUSHTOTALK_ON,	//button in microphone pushed
+		PUSHTOTALK_OFF, //button in microphone released
+		GPIO_ON,		//button in turn on gpio pin
+		GPIO_OFF,		//button in turn of gpio pin
 	};
 };
 

@@ -21,12 +21,11 @@ int main(int argc, char* argv[])
 	//printf("Window closed!\n");
 	//if(connectionSuccesfull)
 	//{
-
-	voipPhone.makeCall("sip:192.168.1.107:9999");
-	while(1)
-	{
-		voipPhone.loop();
-	}
+	//voipPhone.makeCall("sip:192.168.1.107:9999");
+	//while(1)
+	//{
+	//	voipPhone.loop();
+	//}
 	Window window (&tcpsocket);
 	Gtk::Main::run(window);
 	//}

@@ -31,9 +31,10 @@ Glib::ustring createFrequencyMarkup(unsigned int frequency)
 
 Window::Window(TcpSocket *socketPtr)
 :
-freq(0),
+freq(12354500),
 m_MainTable(2,2,true),
 m_FrequencyTable(7,9,true),
+m_SoundTable(2,2,true),
 m_FrequencyAdd1Button("+1"),
 m_FrequencyAdd10Button("+10"),
 m_FrequencyAdd100Button("+100"),
@@ -63,6 +64,7 @@ m_ModulationFMNarrowButton("FM\nNarrow"),
 m_ModulationFMWideButton("FM\nWide"),
 m_ModulationCWRevButton("CW\nRev"),
 m_ModulationRTTYRevButton("RTTY\nRev"),
+m_PushToTalkButton("Push To Talk"),
 socket(socketPtr)
 {
   set_size_request(50, 20);
@@ -153,12 +155,21 @@ socket(socketPtr)
   m_SoundFrame.set_border_width(5);
   m_SoundFrame.set_label("Sound controls");
   m_MainTable.attach( m_SoundFrame,1,2,0,1);
-
-
-
-
-
-
+  m_SoundFrame.add(m_SoundTable);
+  m_SoundLatencyLabel.set_label("Audio Latency:");
+  m_SoundJittterLabel.set_label("Audio Jitter:");
+  m_SoundVolumeLabel.set_label("Audio Volume");
+  m_PushToTalkButton.set_label("Push To Talk");
+  m_SoundLatencyValueLabel.set_label("0 ms");
+  m_SoundJittterValueLabel.set_label("0 ms");
+  m_SoundVolumeValueLabel.set_label("100%");
+  m_SoundTable.attach(m_SoundLatencyLabel,0,1,0,1);
+  m_SoundTable.attach(m_SoundLatencyValueLabel,1,2,0,1);
+  m_SoundTable.attach(m_SoundJittterLabel,0,1,1,2);
+  m_SoundTable.attach(m_SoundJittterValueLabel,1,2,1,2);
+  m_SoundTable.attach(m_SoundVolumeLabel,0,1,2,3);
+  m_SoundTable.attach(m_SoundVolumeValueLabel,1,2,2,3);
+  m_SoundTable.attach(m_PushToTalkButton,0,2,3,5);
   show_all_children();
 }
 
