@@ -3,7 +3,6 @@
 
 namespace Msg
 {
-
 	enum MsgTypes
 	{
 		UNKNOWN,		//not sure for what, just in case
