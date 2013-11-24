@@ -94,23 +94,15 @@ void* createVOIPThread(void* _arg)
 	return (void*)NULL;
 }
 
-void* createSOCATThread(void* _arg)
-{
-   	sleep(2);
-
-	return (void*)NULL;
-}
-
 int main(int argc, char* argv[])
 {
 
 	printf("Hello World in Server\n");
 	signal(SIGPIPE, sigpipeIgnore);
 	signal(SIGINT, sigInterruptHandle);
-	pthread_t id[3];
+	pthread_t id[2];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
-	pthread_create(&id[2], NULL, createSOCATThread, NULL);
 	if(fork() !=0)
 	{
 		while(running)
