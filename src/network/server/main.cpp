@@ -9,8 +9,13 @@
 #include "../socket/MsgTypes.h"
 #include "../voip/VoipPhone.hpp"
 
+#define TCPPORT 	5000
+#define SOCATPORT 	5100
+#define VOIPPORT 	9999
+
+
 TcpSocket tcpsocket;
-VoipPhone voipPhone(9999);
+VoipPhone voipPhone(VOIPPORT);
 
 bool running = true;
 
@@ -24,18 +29,34 @@ void sigInterruptHandle(int sigalnum)
 	running = false;
 }
 
+unsigned short state[30] = {0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1};
+
+void setGPIOstatus(unsigned short number, unsigned short value)
+{
+	 state[number] = value;
+}
+unsigned short getGPIOstatus(unsigned short number)
+{
+	return state[number]%2;
+}
+
+
 void GPIO_GEThandler(message &m)
 {
 	char buffer[2] = {tcpsocket.msg.data[0],tcpsocket.msg.data[1]};
 	unsigned short pin = atoi(buffer);
-	sprintf(tcpsocket.msg.data,"%02d 1", pin);
+	sprintf(tcpsocket.msg.data,"%02u %u", pin, getGPIOstatus(pin));
 }
 
 void GPIO_SEThandler(message &m)
 {
 	char buffer[2] = {tcpsocket.msg.data[0],tcpsocket.msg.data[1]};
-	unsigned short pin = atoi(buffer);
-	sprintf(tcpsocket.msg.data,"%02d 1", pin);
+	char buffer2[2] = {'0',tcpsocket.msg.data[3]};	//little dirty hack to fix atoi converstion problem;
+	unsigned int pin = atoi(buffer);
+	unsigned int value = atoi(buffer2);
+	printf("Need to set %u to value %u\n",pin,value);
+	setGPIOstatus(pin, value);
+	sprintf(tcpsocket.msg.data,"%02u %u", pin, getGPIOstatus(pin));
 }
 void handleConnection()
 {
@@ -67,7 +88,7 @@ void handleConnection()
  */
 void* createTCPThread(void* _arg)
 {
-	tcpsocket.setLocalPort(5000);
+	tcpsocket.setLocalPort(TCPPORT);
 	tcpsocket.create();
 	tcpsocket.bind();
 	tcpsocket.listen();
@@ -113,8 +134,9 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		/*
 		char connection[64];
-	   	sprintf(connection,"TCP-LISTEN:%d,fork", 5100);
+	   	sprintf(connection,"TCP-LISTEN:%d,fork", SOCATPORT);
 		char* argv[] = { "socat","-d", "-d", "-d", connection, "/dev/pts/1,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
 		printf("Forked socat... \n");
 	   	execvp(argv[0], argv);
@@ -122,6 +144,7 @@ int main(int argc, char* argv[])
 	   	{
 	   		sleep(1);
 	   	}
+	   	*/
 	}
 	return 0;
 }

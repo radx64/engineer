@@ -61,6 +61,7 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
                 		linphone_call_ref(call);
                 		printf("Remote address: %s\n",linphone_call_get_remote_address_as_string(call));
                 		linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
+                		linphone_call_enable_echo_cancellation (call, false);
                 		linphone_core_accept_call(lc,call);
 
 

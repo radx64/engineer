@@ -59,8 +59,25 @@ socket(socketPtr)
 
   //Signals attach
   m_GPIO2Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO2) );
+  m_GPIO3Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO3) );
+  m_GPIO4Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO4) );
+  m_GPIO7Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO7) );
+  m_GPIO8Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO8) );
+  m_GPIO9Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO9) );
+  m_GPIO10Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO10) );
+  m_GPIO11Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO11) );
+  m_GPIO14Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO14) );
+  m_GPIO15Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO15) );
+  m_GPIO17Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO17) );
+  m_GPIO18Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO18) );
+  m_GPIO22Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO22) );
+  m_GPIO23Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO23) );
+  m_GPIO24Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO24) );
+  m_GPIO25Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO25) );
+  m_GPIO27Button.signal_clicked().connect(sigc::mem_fun(*this, &Window::onClick_GPIO27) );
 
-
+  m_PushToTalkButton.signal_pressed().connect(sigc::mem_fun(*this, &Window::onPress_PTT) );
+  m_PushToTalkButton.signal_released().connect(sigc::mem_fun(*this, &Window::onRelease_PTT) );
 
   add(m_MainTable);
 
@@ -122,18 +139,146 @@ socket(socketPtr)
   m_SoundTable.attach(m_SoundVolumeValueLabel,1,2,2,3);
   m_SoundTable.attach(m_PushToTalkButton,0,2,3,5);
   show_all_children();
+  initGPIO();
 }
 
 Window::~Window()
 {
 }
 
-void Window::onClick_GPIO2(void)
+bool Window::isPinOn(unsigned short pin)
 {
-	socket->msg.type = Msg::GPIO_GET;
-	sprintf(socket->msg.data,"00");
+		socket->msg.type = Msg::GPIO_GET;
+		sprintf(socket->msg.data,"%02d",pin);
+		socket->send();
+		socket->recv();
+		char buffer[1] = {socket->msg.data[3]};
+		unsigned short value = atoi(buffer);
+		printf("Message: %s\nPin %02d has value %d\n",socket->msg.data,pin, value);
+		return value;
+}
+
+void Window::setPinStatus(unsigned short pin, bool value)
+{
+	socket->msg.type = Msg::GPIO_SET;
+	sprintf(socket->msg.data,"%02d %d",pin, value?1:0);
 	socket->send();
 	socket->recv();
-	printf("----> Recived %s from server\n", socket->msg.data);
+	char buffer[1] = {socket->msg.data[3]};
+	unsigned short returnvalue = atoi(buffer);
+	printf("Message: %s\nPin %02d has value %d\n",socket->msg.data,pin, returnvalue);
 }
+
+
+void Window::initGPIO()
+{
+	m_GPIO2Button.set_active(isPinOn(2));
+	m_GPIO3Button.set_active(isPinOn(3));
+	m_GPIO4Button.set_active(isPinOn(4));
+	m_GPIO7Button.set_active(isPinOn(7));
+	m_GPIO8Button.set_active(isPinOn(8));
+	m_GPIO9Button.set_active(isPinOn(9));
+	m_GPIO10Button.set_active(isPinOn(10));
+	m_GPIO11Button.set_active(isPinOn(11));
+	m_GPIO14Button.set_active(isPinOn(14));
+	m_GPIO15Button.set_active(isPinOn(15));
+	m_GPIO17Button.set_active(isPinOn(17));
+	m_GPIO18Button.set_active(isPinOn(18));
+	m_GPIO22Button.set_active(isPinOn(22));
+	m_GPIO23Button.set_active(isPinOn(23));
+	m_GPIO24Button.set_active(isPinOn(24));
+	m_GPIO25Button.set_active(isPinOn(25));
+	m_GPIO27Button.set_active(isPinOn(27));
+
+}
+
+void Window::processGPIOClick(Gtk::ToggleButton *buttonptr, unsigned int pin)
+{
+	if(buttonptr->get_active()) setPinStatus(pin,true);
+	else setPinStatus(pin,false);
+	buttonptr->set_active(isPinOn(pin));
+}
+
+void Window::onClick_GPIO2(void)
+{
+	processGPIOClick(&m_GPIO2Button,2);
+}
+
+void Window::onClick_GPIO3(void)
+{
+	processGPIOClick(&m_GPIO3Button,3);
+}
+void Window::onClick_GPIO4(void)
+{
+	processGPIOClick(&m_GPIO4Button,4);
+}
+void Window::onClick_GPIO7(void)
+{
+	processGPIOClick(&m_GPIO7Button,7);
+}
+void Window::onClick_GPIO8(void)
+{
+	processGPIOClick(&m_GPIO8Button,8);
+}
+void Window::onClick_GPIO9(void)
+{
+	processGPIOClick(&m_GPIO9Button,9);
+}
+void Window::onClick_GPIO10(void)
+{
+	processGPIOClick(&m_GPIO10Button,10);
+}
+void Window::onClick_GPIO11(void)
+{
+	processGPIOClick(&m_GPIO11Button,11);
+}
+void Window::onClick_GPIO14(void)
+{
+	processGPIOClick(&m_GPIO14Button,14);
+}
+void Window::onClick_GPIO15(void)
+{
+	processGPIOClick(&m_GPIO15Button,15);
+}
+void Window::onClick_GPIO17(void)
+{
+	processGPIOClick(&m_GPIO17Button,17);
+}
+void Window::onClick_GPIO18(void)
+{
+	processGPIOClick(&m_GPIO18Button,18);
+}
+void Window::onClick_GPIO22(void)
+{
+	processGPIOClick(&m_GPIO22Button,22);
+}
+void Window::onClick_GPIO23(void)
+{
+	processGPIOClick(&m_GPIO23Button,23);
+}
+void Window::onClick_GPIO24(void)
+{
+	processGPIOClick(&m_GPIO24Button,24);
+}
+void Window::onClick_GPIO25(void)
+{
+	processGPIOClick(&m_GPIO25Button,25);
+}
+void Window::onClick_GPIO27(void)
+{
+	processGPIOClick(&m_GPIO27Button,27);
+}
+
+void Window::onPress_PTT(void)
+{
+	setPinStatus(2,true);
+	m_GPIO2Button.set_active(isPinOn(2));
+}
+
+void Window::onRelease_PTT(void)
+{
+	setPinStatus(2,false);
+	m_GPIO2Button.set_active(isPinOn(2));
+}
+
 

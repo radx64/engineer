@@ -15,6 +15,13 @@ public:
 
 
 protected:
+
+	bool isPinOn(unsigned short pin);
+	void setPinStatus(unsigned short pin, bool value);
+	void processGPIOClick(Gtk::ToggleButton *buttonptr, unsigned int pin);
+
+	void initGPIO();
+
 	//Signal handlers:
 	void onClick_GPIO2(void);
 	void onClick_GPIO3(void);
@@ -33,6 +40,9 @@ protected:
 	void onClick_GPIO24(void);
 	void onClick_GPIO25(void);
 	void onClick_GPIO27(void);
+	void onPress_PTT(void);
+	void onRelease_PTT(void);
+
 	//End of signal handlers
 
 	//Child widgets:
