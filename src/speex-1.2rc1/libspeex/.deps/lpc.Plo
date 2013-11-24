@@ -1,0 +1,20 @@
+lpc.lo: lpc.c /usr/include/stdc-predef.h \
+ /usr/include/x86_64-linux-gnu/bits/predefs.h ../config.h lpc.h arch.h \
+ ../include/speex/speex_types.h ../include/speex/speex_config_types.h \
+ fixed_generic.h
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/predefs.h:
+
+../config.h:
+
+lpc.h:
+
+arch.h:
+
+../include/speex/speex_types.h:
+
+../include/speex/speex_config_types.h:
+
+fixed_generic.h:

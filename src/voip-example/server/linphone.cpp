@@ -61,7 +61,9 @@ static void call_state_changed(LinphoneCore *lc, LinphoneCall *call, LinphoneCal
                 		linphone_call_ref(call);
                 		printf("Remote address: %s\n",linphone_call_get_remote_address_as_string(call));
                 		linphone_chat_room_send_message(chat_room,"Welcome in room!\n");
-                		linphone_core_accept_call(lc,call);
+                		linphone_call_enable_echo_cancellation (call, false);
+                		linphone_call_enable_echo_limiter(call,false);
+				linphone_core_accept_call(lc,call);
 
 
                 break;
@@ -99,7 +101,7 @@ int main(int argc, char *argv[]){
          in order to get notifications about the progress of the call.
          */
         vtable.call_state_changed=call_state_changed;
-        vtable.text_received=text_received;
+        //vtable.text_received=text_received;
 
         /*
          Instanciate a LinphoneCore object given the LinphoneCoreVTable
@@ -107,6 +109,14 @@ int main(int argc, char *argv[]){
         //linphone_core_disable_logs();
         lc=linphone_core_new(&vtable,NULL,NULL,NULL);
         linphone_core_set_sip_port(lc, 9999);
+	
+	const char** devs = linphone_core_get_sound_devices(lc);
+		
+	printf("DEVICE: %s\n",devs[0]);
+	printf("DEVICE: %s\n",devs[1]);
+
+        //linphone_core_set_playback_device(lc,devs[1]);
+        //linphone_core_set_capture_device(lc,devs[1]);
 
         linphone_core_iterate(lc);
 
