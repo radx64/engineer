@@ -26,12 +26,16 @@ void sigInterruptHandle(int sigalnum)
 
 void GPIO_GEThandler(message &m)
 {
-	sprintf(tcpsocket.msg.data,"00 0");
+	char buffer[2] = {tcpsocket.msg.data[0],tcpsocket.msg.data[1]};
+	unsigned short pin = atoi(buffer);
+	sprintf(tcpsocket.msg.data,"%02d 1", pin);
 }
 
 void GPIO_SEThandler(message &m)
 {
-	sprintf(tcpsocket.msg.data,"00 0");
+	char buffer[2] = {tcpsocket.msg.data[0],tcpsocket.msg.data[1]};
+	unsigned short pin = atoi(buffer);
+	sprintf(tcpsocket.msg.data,"%02d 1", pin);
 }
 void handleConnection()
 {
@@ -94,9 +98,13 @@ void* createSOCATThread(void* _arg)
 {
    	sleep(2);
 	char connection[64];
-   	sprintf(connection,"TCP-LISTEN:%d,fork", tcpsocket.getLocalPort()+1);
-	char* argv[] = { "socat", connection, "/dev/ttyS0,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+   	sprintf(connection,"TCP-LISTEN:%d,fork", (tcpsocket.getLocalPort()+100));
+	char* argv[] = { "socat", connection, "/dev/pts/0,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
    	execvp(argv[0], argv);
+   	while(true)
+   	{
+   		sleep(1);
+   	}
 	return (void*)NULL;
 }
 

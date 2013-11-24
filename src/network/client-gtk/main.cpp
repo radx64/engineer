@@ -35,10 +35,12 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-		       	char connection[64];
-		       	sprintf(connection,"tcp:%s:%d", tcpsocket.getRemoteAddress(),tcpsocket.getRemotePort()+1);
+				char connection[64];
+
+		       	sprintf(connection,"tcp:%s:%d", tcpsocket.getRemoteAddress(),(tcpsocket.getRemotePort()+10));
 				char* argv[] = { "socat", "-d", "-d", "pty,link=./vcom1,echo=0,crnl",connection, NULL };	//run socat and create virtual serial port and add symlink in current directory
 		       	execvp(argv[0], argv);
+
 			}
 	}
 
