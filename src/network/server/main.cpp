@@ -98,8 +98,8 @@ void* createSOCATThread(void* _arg)
 {
    	sleep(2);
 	char connection[64];
-   	sprintf(connection,"TCP-LISTEN:%d,fork", (tcpsocket.getLocalPort()+100));
-	char* argv[] = { "socat", connection, "/dev/pts/0,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+   	sprintf(connection,"TCP-LISTEN:%d,fork", (tcpsocket.getLocalPort()+10));
+	char* argv[] = { "socat","-d -d", connection, "/dev/pts/18,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
    	execvp(argv[0], argv);
    	while(true)
    	{
