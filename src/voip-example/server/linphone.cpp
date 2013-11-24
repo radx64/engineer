@@ -108,7 +108,8 @@ int main(int argc, char *argv[]){
         //linphone_core_disable_logs();
         lc=linphone_core_new(&vtable,NULL,NULL,NULL);
         linphone_core_set_sip_port(lc, 9999);
-
+        linphone_core_set_playback_device(lc,"1");
+        linphone_core_set_capture_device(lc,"1");
         linphone_core_iterate(lc);
 
         //LinphoneChatRoom* chat_room = linphone_core_create_chat_room(lc,"sip:radek@192.168.1.100:9998");
