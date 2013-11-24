@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
 	{
 		char connection[64];
 	   	sprintf(connection,"TCP-LISTEN:%d,fork", 5100);
-		char* argv[] = { "socat","-d", "-d", "-d", connection, "/dev/pts/1,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+		char* argv[] = { "socat","-d", "-d", "-d", connection, "/dev/pts/16,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
 		printf("Forked socat... \n");
 	   	execvp(argv[0], argv);
 	   	while(true)
