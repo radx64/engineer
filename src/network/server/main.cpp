@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include "../socket/TcpSocket.hpp"
+#include "../socket/MsgTypes.h"
 #include "../voip/VoipPhone.hpp"
 
 TcpSocket tcpsocket;
@@ -23,6 +24,15 @@ void sigInterruptHandle(int sigalnum)
 	running = false;
 }
 
+void GPIO_GEThandler(message &m)
+{
+	sprintf(tcpsocket.msg.data,"00 0");
+}
+
+void GPIO_SEThandler(message &m)
+{
+	sprintf(tcpsocket.msg.data,"00 0");
+}
 void handleConnection()
 {
 	unsigned short size;
@@ -35,8 +45,15 @@ void handleConnection()
 			printf("Connection is closing by remote host...\n");
 			break;
 		}
-		printf("Got message %s\nSending response...\n",tcpsocket.msg.data);
-		sprintf(tcpsocket.msg.data,"Nothing yet implemented!");
+
+		printf("Got message: %s\n",tcpsocket.msg.data);
+
+		switch (tcpsocket.msg.type)
+		{
+			case Msg::GPIO_GET : GPIO_GEThandler(tcpsocket.msg); break;
+			case Msg::GPIO_SET : GPIO_SEThandler(tcpsocket.msg); break;
+		}
+		printf("Sending response: %s \n",tcpsocket.msg.data);
 		tcpsocket.send(tcpsocket.msg);
 	}
 }
@@ -73,14 +90,26 @@ void* createVOIPThread(void* _arg)
 	return (void*)NULL;
 }
 
+void* createSOCATThread(void* _arg)
+{
+   	sleep(2);
+	char connection[64];
+   	sprintf(connection,"TCP-LISTEN:%d,fork", tcpsocket.getLocalPort()+1);
+	char* argv[] = { "socat", connection, "/dev/ttyS0,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+   	execvp(argv[0], argv);
+	return (void*)NULL;
+}
+
 int main(int argc, char* argv[])
 {
+
 	printf("Hello World in Server\n");
 	signal(SIGPIPE, sigpipeIgnore);
 	signal(SIGINT, sigInterruptHandle);
-	pthread_t id[2];
+	pthread_t id[3];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
+	pthread_create(&id[2], NULL, createSOCATThread, NULL);
 	while(running)
 	{
 		sleep(1);

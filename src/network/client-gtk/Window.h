@@ -16,35 +16,24 @@ public:
 
 protected:
 	//Signal handlers:
-	void incFreq1();
-	void incFreq10();
-	void incFreq100();
-	void incFreq1k();
-	void incFreq10k();
-	void incFreq100k();
-	void incFreq1M();
-	void incFreq10M();
-	void incFreq100M();
-
-
-	void decFreq1();
-	void decFreq10();
-	void decFreq100();
-	void decFreq1k();
-	void decFreq10k();
-	void decFreq100k();
-	void decFreq1M();
-	void decFreq10M();
-	void decFreq100M();
-
+	void onClick_GPIO2(void);
+	void onClick_GPIO3(void);
+	void onClick_GPIO4(void);
+	void onClick_GPIO7(void);
+	void onClick_GPIO8(void);
+	void onClick_GPIO9(void);
+	void onClick_GPIO10(void);
+	void onClick_GPIO11(void);
+	void onClick_GPIO14(void);
+	void onClick_GPIO15(void);
+	void onClick_GPIO17(void);
+	void onClick_GPIO18(void);
+	void onClick_GPIO22(void);
+	void onClick_GPIO23(void);
+	void onClick_GPIO24(void);
+	void onClick_GPIO25(void);
+	void onClick_GPIO27(void);
 	//End of signal handlers
-
-	void updateFrequencyDelta(signed int deltaFrequency);
-	void updateFrequency(unsigned int Frequency);
-	unsigned int freq; //temporary freq for gui testing
-
-
-
 
 	//Child widgets:
 	//Main table for positioning all elements
@@ -52,42 +41,26 @@ protected:
 	//End of main table
 
 	//Frequency frame
-	Gtk::Frame m_FrequencyFrame;
-	Gtk::Table m_FrequencyTable;
-	Gtk::Label m_FrequencyEntryLabel;
-	Gtk::Button m_FrequencyManualEntryButton;
-	Gtk::Button m_FrequencyAdd1Button;
-	Gtk::Button m_FrequencyAdd10Button;
-	Gtk::Button m_FrequencyAdd100Button;
-	Gtk::Button m_FrequencyAdd1kButton;
-	Gtk::Button m_FrequencyAdd10kButton;
-	Gtk::Button m_FrequencyAdd100kButton;
-	Gtk::Button m_FrequencyAdd1MButton;
-	Gtk::Button m_FrequencyAdd10MButton;
-	Gtk::Button m_FrequencyAdd100MButton;
+	Gtk::Frame m_GPIOFrame;
+	Gtk::Table m_GPIOTable;
+	Gtk::ToggleButton m_GPIO2Button; //used to pushtotalk
+	Gtk::ToggleButton m_GPIO3Button;
+	Gtk::ToggleButton m_GPIO4Button;
+	Gtk::ToggleButton m_GPIO7Button;
+	Gtk::ToggleButton m_GPIO8Button;
+	Gtk::ToggleButton m_GPIO9Button;
+	Gtk::ToggleButton m_GPIO10Button;
+	Gtk::ToggleButton m_GPIO11Button;
+	Gtk::ToggleButton m_GPIO14Button;
+	Gtk::ToggleButton m_GPIO15Button;
+	Gtk::ToggleButton m_GPIO17Button;
+	Gtk::ToggleButton m_GPIO18Button;
+	Gtk::ToggleButton m_GPIO22Button;
+	Gtk::ToggleButton m_GPIO23Button;
+	Gtk::ToggleButton m_GPIO24Button;
+	Gtk::ToggleButton m_GPIO25Button;
+	Gtk::ToggleButton m_GPIO27Button;
 
-	Gtk::Button m_FrequencyRemove1Button;
-	Gtk::Button m_FrequencyRemove10Button;
-	Gtk::Button m_FrequencyRemove100Button;
-	Gtk::Button m_FrequencyRemove1kButton;
-	Gtk::Button m_FrequencyRemove10kButton;
-	Gtk::Button m_FrequencyRemove100kButton;
-	Gtk::Button m_FrequencyRemove1MButton;
-	Gtk::Button m_FrequencyRemove10MButton;
-	Gtk::Button m_FrequencyRemove100MButton;
-
-	Gtk::Label m_ModulationLabel;
-	Gtk::ToggleButton m_ModulationAMButton;
-	Gtk::ToggleButton m_ModulationCWButton;
-	Gtk::ToggleButton m_ModulationUSBButton;
-	Gtk::ToggleButton m_ModulationLSBButton;
-	Gtk::ToggleButton m_ModulationRTTYButton;
-	Gtk::ToggleButton m_ModulationFMNarrowButton;
-	Gtk::ToggleButton m_ModulationFMWideButton;
-	Gtk::ToggleButton m_ModulationCWRevButton;
-	Gtk::ToggleButton m_ModulationRTTYRevButton;
-
-	Gtk::Button m_FrequencySetButton;
 	//End of frequency frame
 
 	//Log frame

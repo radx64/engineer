@@ -48,7 +48,11 @@ public:
     void accept(void (*callbackForHandlingConnection)(void));
     void recv(message &dataBuffer, unsigned short &dataSize);
     void send(message &dataBuffer);
+    void recv(void);
+    void send(void);
+    char* getRemoteAddress(void);
     message msg;
+    unsigned short msgSize;
     unsigned char socketStatus;
 
 private:

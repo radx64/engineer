@@ -57,7 +57,7 @@ void ConnectWindow::on_connect_clicked()
 	socket->msg.type = 1;
 	socket->create();
 	socket->connect((char*)  m_ServerIPEntry.get_text().c_str());
-	if(socket->socketStatus  == TcpSocket::CONNECT_FAILED)
+	if(socket->socketStatus  != TcpSocket::CONNECTION_OK)
 	{
 		*connected = false;
 		Gtk::MessageDialog dialog(*this, "Could not connect to server",false, Gtk::MESSAGE_ERROR);

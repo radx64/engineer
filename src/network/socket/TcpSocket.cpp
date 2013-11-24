@@ -136,6 +136,28 @@ void TcpSocket::recv(message &dataBuffer, unsigned short &dataSize)
     }
 }
 
+void TcpSocket::send(void)
+{
+	if (::send(messageSocket, &msg, sizeof(msg), 0) < 0)
+	{
+		error("send() failed");
+		socketStatus = TcpSocket::SEND_FAILED;
+	}
+}
+
+void TcpSocket::recv(void)
+{
+    if ((msgSize = ::recv(messageSocket, &msg, sizeof(msg), MSG_WAITALL)) < 0)
+    {
+    	error("recv() failed"); //MSG_WAITALL
+    	socketStatus = TcpSocket::RECIEVE_FAILED;
+    }
+}
+
+char* TcpSocket::getRemoteAddress(void)
+{
+	return inet_ntoa(remoteHostAddress.sin_addr);
+}
 
 
 
