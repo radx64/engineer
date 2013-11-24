@@ -99,7 +99,7 @@ int main(int argc, char *argv[]){
          in order to get notifications about the progress of the call.
          */
         vtable.call_state_changed=call_state_changed;
-        vtable.text_received=text_received;
+        //vtable.text_received=text_received;
 
         /*
          Instanciate a LinphoneCore object given the LinphoneCoreVTable
