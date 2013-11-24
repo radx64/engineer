@@ -97,14 +97,7 @@ void* createVOIPThread(void* _arg)
 void* createSOCATThread(void* _arg)
 {
    	sleep(2);
-	char connection[64];
-   	sprintf(connection,"TCP-LISTEN:%d,fork", (tcpsocket.getLocalPort()+100));
-	char* argv[] = { "socat", connection, "/dev/pts/0,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
-   	execvp(argv[0], argv);
-   	while(true)
-   	{
-   		sleep(1);
-   	}
+
 	return (void*)NULL;
 }
 
@@ -118,10 +111,25 @@ int main(int argc, char* argv[])
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
 	pthread_create(&id[2], NULL, createSOCATThread, NULL);
-	while(running)
+	if(fork() !=0)
 	{
-		sleep(1);
+		while(running)
+		{
+			sleep(1);
+		}
+		printf("Ending main Thread\n");
 	}
-	printf("Ending main Thread\n");
+	else
+	{
+		char connection[64];
+	   	sprintf(connection,"TCP-LISTEN:%d,fork", 5100);
+		char* argv[] = { "socat","-d", "-d", "-d", connection, "/dev/pts/1,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+		printf("Forked socat... \n");
+	   	execvp(argv[0], argv);
+	   	while(true)
+	   	{
+	   		sleep(1);
+	   	}
+	}
 	return 0;
 }
