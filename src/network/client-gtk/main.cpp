@@ -11,21 +11,23 @@
 #include <unistd.h>
 #include <pthread.h>
 
-VoipPhone voipPhone(9998);
+VoipPhone voipPhone(19998);
 
 void* voipLoop(void* _arg)
 {
 	//Window *window;
 	//window = (Window *) _arg;
-	while(1)
-	{
-		voipPhone.loop();
-		//window->setVoipLatencyLabel("22");
-		sleep(1);
-	}
+
 	return (void*)NULL;
 }
 
+void* createGUI(void* _arg)
+{
+	TcpSocket *sock;
+	sock = (TcpSocket *) _arg;
+	Window window (sock);
+	Gtk::Main::run(window);
+}
 
 int main(int argc, char* argv[])
 {
@@ -41,10 +43,17 @@ int main(int argc, char* argv[])
 		{
 			if (fork() != 0)		//fork for socat
 			{
-				voipPhone.makeCall("sip:192.168.1.104");
-				Window window (&tcpsocket);
-				pthread_create(&VoipLoopThread, NULL, voipLoop, (void*) &window);
-				Gtk::Main::run(window);
+				voipPhone.loop();
+				voipPhone.makeCall("sip:radek@192.168.1.104");
+				voipPhone.loop();
+				//pthread_create(&VoipLoopThread, NULL, createGUI, (void*) &tcpsocket);
+				while(1)
+				{
+					voipPhone.loop();
+					//window->setVoipLatencyLabel("22");
+					sleep(1);
+				}
+
 			}
 			else
 			{
