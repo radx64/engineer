@@ -7,7 +7,7 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall
 
-LFLAGS= -lncurses -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -L /usr/lib/ -llinphone -lmediastreamer
+LFLAGS= -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -L /usr/lib/ -llinphone -lmediastreamer
 #the build target executable:
 TARGET= server
 
