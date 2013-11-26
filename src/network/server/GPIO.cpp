@@ -6,13 +6,13 @@ using namespace std;
 
 GPIO::GPIO():valuefd(-1),directionfd(-1),exportfd(-1),unexportfd(-1),gpionum("4")
 {
-        //GPIO4 is default
+    //GPIO4 is default
 	this->export_gpio();
 }
 
 GPIO::GPIO(string gnum):valuefd(-1),directionfd(-1),exportfd(-1),unexportfd(-1),gpionum(gnum)
 {
-	//Instatiate GPIOClass object for GPIO pin number "gnum"
+
 	this->export_gpio();
 }
 
@@ -226,12 +226,14 @@ int GPIO::setdir_gpio(string dir)
 
 int GPIO::setval_gpio(string val)
 {
-	    return 0;
+	    valuefd = atoi(val);
+		return 0;
 }
 
 
 int GPIO::getval_gpio(string& val)
 {
+	sprintf(val,"%d",valuefd);
 	return 0;
 }
 

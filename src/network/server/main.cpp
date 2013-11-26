@@ -5,20 +5,32 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <pthread.h>
-#include <ncurses.h>
 #include "../socket/TcpSocket.hpp"
 #include "../socket/MsgTypes.h"
 #include "../voip/VoipPhone.hpp"
 
 #include "GPIO.h"
 
+/*
+ * define part
+ */
+
 #define TCPPORT 	5000
 #define SOCATPORT 	5100
-#define VOIPPORT 	9999
+
+#define NRM  "\x1B[0m"
+#define RST	 "\x1B[30m"
+#define RED  "\x1B[31m"
+#define GRN  "\x1B[32m"
+#define YEL  "\x1B[33m"
+#define BLU  "\x1B[34m"
+#define MAG  "\x1B[35m"
+#define CYN  "\x1B[36m"
+#define WHT  "\x1B[37m"
+
 
 
 TcpSocket tcpsocket;
-//VoipPhone voipPhone(VOIPPORT);
 
 bool running = true;
 
@@ -108,29 +120,13 @@ void* createTCPThread(void* _arg)
  */
 void* createVOIPThread(void* _arg)
 {
-/*
-	while(running)
-	{
-		voipPhone.loop();
-		ms_usleep(50000);
-	}
-	printf("Ending VOIP Thread\n");
-	voipPhone.terminate();
-	*/
-	char* argv[] = { "linphonecsh","exit",NULL };
-	printf("Voip preparing... \n");
-	if (fork() == 0)
-	{
-		execvp(argv[0], argv);
-	}
- 	sleep(5);
 	char* argv2[] = { "linphonecsh","init",NULL };
 	printf("Voip starting... \n");
 	if (fork() == 0)
 	{
 		execvp(argv2[0], argv2);
 	}
-   	sleep(2);
+   	sleep(1);
    	char* argv3[] = { "linphonecsh","generic","autoanswer enable",NULL };
    	printf("Auto answer mode setting... \n");
 	if (fork() == 0)
@@ -147,39 +143,55 @@ void* createVOIPThread(void* _arg)
 int main(int argc, char* argv[])
 {
 
-	printf("Hello World in Server\n");
-	signal(SIGPIPE, sigpipeIgnore);
-	signal(SIGINT, sigInterruptHandle);
+	printf(NRM "+------------------------------------------------------------------------+\n" NRM);
+	printf(NRM "|"GRN"Welcome in Amateur Radio Remote Control Server Application"NRM"              |\n" NRM);
+	printf(NRM "|                                             "RED" Author: Radoslaw Szewczyk "NRM "|\n" NRM);
+	printf(NRM "|                                                                "RED" 184792 "NRM "|\n" NRM);
+	printf(NRM "+------------------------------------------------------------------------+\n" NRM);
+	if(argc > 2)
+	{
+		printf("You have started server with configuration below\n");
+		printf(NRM "Serial device: "GRN"%s\n",argv[1]);
+		printf(NRM "TCP port: "GRN"%s\n",argv[2]);
+	}
+	else
+	{
+		printf("Unfortunately, to few parameters given\n");
+		printf("Usage: %s SERIAL_DEVICE TCPPORT\n",argv[0]);
+		printf("\t SERIAL_DEVICE\t - serial device path eg. /dev/ttyS0\n");
+		printf("\t TCPPORT \t - port to listen for connections\n");
+		exit(1);
+	}
+
+	//signal(SIGPIPE, sigpipeIgnore);
+	//signal(SIGINT, sigInterruptHandle);
+	printf(NRM);
 	pthread_t id[2];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
-	//initscr();			/* Start curses mode 		  */
-	//printw("Hello World !!!");	/* Print Hello World		  */
-	//refresh();			/* Print it on to the real screen */
-	//getch();			/* Wait for user input */
-	//endwin();			/* End curses mode		  */
+
 	if(fork() !=0)
 	{
 		while(running)
 		{
 			sleep(1);
-			printf("HeartBeat!\n");
 		}
 		printf("Ending main Thread\n");
 	}
 	else
 	{
-		/*
+
 		char connection[64];
-	   	sprintf(connection,"TCP-LISTEN:%d,fork", 5100);
-		char* argv[] = { "socat","-d", "-d", "-d", connection, "/dev/pts/16,raw", NULL };	//run socat and create virtual serial port and add symlink in current directory
+	   	sprintf(connection,"TCP-LISTEN:%d,fork", atoi(argv[2])+1);
+		char* args[] = { "socat","-d", "-d", "-d", connection, argv[1], NULL };	//run socat and create virtual serial port and add symlink in current directory
 		printf("Forked socat... \n");
-	   	execvp(argv[0], argv);
+	   	execvp(args[0], args);
+
 	   	while(true)
 	   	{
 	   		sleep(1);
 	   	}
-	   	*/
+
 	}
 	return 0;
 }
