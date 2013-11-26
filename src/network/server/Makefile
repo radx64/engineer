@@ -7,11 +7,14 @@ CC= g++
 #  -pthreads
 CFLAGS= -g -Wall
 
-LFLAGS=  -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -L /usr/lib/ -llinphone -lmediastreamer
+LFLAGS= -lncurses -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -L /usr/lib/ -llinphone -lmediastreamer
 #the build target executable:
 TARGET= server
 
 OBJECTS:= $(patsubst %.cpp,%.o,$(wildcard *.cpp))
+
+STUB=NOSTUB #if STUB=GPIOSTUB then gpio support will be emulated
+
 
 all : lib $(TARGET)
 
@@ -21,7 +24,7 @@ $(TARGET) : $(OBJECTS)
 
 %.o : %.cpp
 	@echo "Compiling" $< "to" $@
-	$(CC) $(CFLAGS) -c $< -o $@ 
+	$(CC) $(CFLAGS) -c $< -o $@ -D=$(STUB)
 
 clean:
 	rm $(TARGET) $(wildcard *.o) -f
@@ -45,4 +48,3 @@ lib:
 	@echo "Socket voip done"
 
 .PHONY: clean help configure config lib
-

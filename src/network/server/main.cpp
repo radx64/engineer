@@ -5,9 +5,12 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <ncurses.h>
 #include "../socket/TcpSocket.hpp"
 #include "../socket/MsgTypes.h"
 #include "../voip/VoipPhone.hpp"
+
+#include "GPIO.h"
 
 #define TCPPORT 	5000
 #define SOCATPORT 	5100
@@ -15,7 +18,7 @@
 
 
 TcpSocket tcpsocket;
-VoipPhone voipPhone(VOIPPORT);
+//VoipPhone voipPhone(VOIPPORT);
 
 bool running = true;
 
@@ -105,6 +108,7 @@ void* createTCPThread(void* _arg)
  */
 void* createVOIPThread(void* _arg)
 {
+/*
 	while(running)
 	{
 		voipPhone.loop();
@@ -112,6 +116,31 @@ void* createVOIPThread(void* _arg)
 	}
 	printf("Ending VOIP Thread\n");
 	voipPhone.terminate();
+	*/
+	char* argv[] = { "linphonecsh","exit",NULL };
+	printf("Voip preparing... \n");
+	if (fork() == 0)
+	{
+		execvp(argv[0], argv);
+	}
+ 	sleep(5);
+	char* argv2[] = { "linphonecsh","init",NULL };
+	printf("Voip starting... \n");
+	if (fork() == 0)
+	{
+		execvp(argv2[0], argv2);
+	}
+   	sleep(2);
+   	char* argv3[] = { "linphonecsh","generic","autoanswer enable",NULL };
+   	printf("Auto answer mode setting... \n");
+	if (fork() == 0)
+	{
+		execvp(argv3[0], argv3);
+	}
+   	while(true)
+   	{
+   		sleep(1);
+   	}
 	return (void*)NULL;
 }
 
@@ -124,11 +153,17 @@ int main(int argc, char* argv[])
 	pthread_t id[2];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
 	pthread_create(&id[1], NULL, createVOIPThread, NULL);
+	//initscr();			/* Start curses mode 		  */
+	//printw("Hello World !!!");	/* Print Hello World		  */
+	//refresh();			/* Print it on to the real screen */
+	//getch();			/* Wait for user input */
+	//endwin();			/* End curses mode		  */
 	if(fork() !=0)
 	{
 		while(running)
 		{
 			sleep(1);
+			printf("HeartBeat!\n");
 		}
 		printf("Ending main Thread\n");
 	}
