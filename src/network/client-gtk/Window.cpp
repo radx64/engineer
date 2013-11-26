@@ -281,4 +281,8 @@ void Window::onRelease_PTT(void)
 	m_GPIO2Button.set_active(isPinOn(2));
 }
 
+void Window::setVoipLatencyLabel(const char *label)
+{
+	this->m_SoundLatencyValueLabel.set_label(label);
+}
 

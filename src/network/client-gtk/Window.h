@@ -12,6 +12,7 @@ class Window : public Gtk::Window
 public:
 	Window(TcpSocket *socketPtr);
 	virtual ~Window();
+	void setVoipLatencyLabel(const char *label);
 
 
 protected:
