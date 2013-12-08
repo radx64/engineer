@@ -5,7 +5,7 @@ CC= g++
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
 #  -pthreads
-CFLAGS= -g `pkg-config --cflags gtkmm-3.0`
+CFLAGS= -w -g `pkg-config --cflags gtkmm-3.0` 
 
 LFLAGS= `pkg-config --libs gtkmm-3.0` -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -llinphone -lmediastreamer
 # the build target executable:
