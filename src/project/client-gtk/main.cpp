@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 				voipPhone.loop();
 				voipPhone.makeCall("sip:radek@192.168.1.104");
 				voipPhone.loop();
-				//pthread_create(&VoipLoopThread, NULL, createGUI, (void*) &tcpsocket);
+				pthread_create(&VoipLoopThread, NULL, createGUI, (void*) &tcpsocket);
 				while(1)
 				{
 					voipPhone.loop();
