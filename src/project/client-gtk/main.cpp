@@ -1,13 +1,21 @@
-#define DEBUG
+/*
+ * ===========================================
+ * File:   main.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
 
+#define DEBUG
 #include <stdio.h>
 #include <stdlib.h>
 #include <gtk/gtk.h>
 #include <gtkmm-3.0/gtkmm.h>
 #include "../socket/TcpSocket.hpp"
 #include "../voip/VoipPhone.hpp"
-#include "Window.h"
-#include "ConnectWindow.h"
+#include "Window.hpp"
+#include "ConnectWindow.hpp"
 #include <unistd.h>
 #include <pthread.h>
 

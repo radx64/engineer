@@ -1,5 +1,14 @@
-#ifndef TCPSOCKET_H
-#define TCPSOCKET_H
+/*
+ * ===========================================
+ * File:   TcpSocket.hpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
+
+#ifndef TCPSOCKET_HPP_
+#define TCPSOCKET_HPP_
 
 #include <stdio.h>      /* for printf() and fprintf() */
 #include <sys/socket.h> /* for socket(), bind(), and connect() */
@@ -7,14 +16,14 @@
 #include <stdlib.h>     /* for atoi() and exit() */
 #include <string.h>     /* for memset() */
 #include <unistd.h>     /* for close() */
-#include "MsgTypes.h"
+#include "MsgTypes.hpp"
 
 #define MAX_MSG_SIZE 128
 
 typedef struct
 {
 	int type;
-	char size;	//size of data if data is transmited;
+	char size;
 	char data[MAX_MSG_SIZE];
 } message;
 
@@ -56,12 +65,12 @@ public:
     unsigned char socketStatus;
 
 private:
-    int listenSocket;                 	/* Socket descriptor for server */
-    int messageSocket;                	/* Socket descriptor for client */
+    int listenSocket;                 			/* Socket descriptor for server */
+    int messageSocket;                			/* Socket descriptor for client */
     struct sockaddr_in localHostAddress; 		/* Local address */
     struct sockaddr_in remoteHostAddress; 		/* Client address */
     unsigned short localPort;     				/* Server port */
-    unsigned short remotePort;
-    unsigned int remoteAddressLength;            /* Length of client address data structure */
+    unsigned short remotePort;					/* Server port when acting as client */
+    unsigned int remoteAddressLength;           /* Length of client address data structure */
 };
-#endif  /*  TCPSOCKET_H */
+#endif  /*  TCPSOCKET_HPP_ */

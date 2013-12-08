@@ -1,3 +1,11 @@
+/*
+ * ===========================================
+ * File:   Error.hpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
 #ifndef ERROR_HPP_
 #define ERROR_HPP_
 

@@ -1,3 +1,11 @@
+/*
+ * ===========================================
+ * File:   main.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
 #define DEBUG
 
 #include <stdio.h>
@@ -6,10 +14,10 @@
 #include <unistd.h>
 #include <pthread.h>
 #include "../socket/TcpSocket.hpp"
-#include "../socket/MsgTypes.h"
+#include "../socket/MsgTypes.hpp"
 #include "../voip/VoipPhone.hpp"
 
-#include "GPIO.h"
+#include "GPIO.hpp"
 
 /*
  * define part
@@ -27,8 +35,6 @@
 #define MAG  "\x1B[35m"
 #define CYN  "\x1B[36m"
 #define WHT  "\x1B[37m"
-
-
 
 TcpSocket tcpsocket;
 
@@ -163,8 +169,8 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
-	//signal(SIGPIPE, sigpipeIgnore);
-	//signal(SIGINT, sigInterruptHandle);
+	signal(SIGPIPE, sigpipeIgnore);
+	signal(SIGINT, sigInterruptHandle);
 	printf(NRM);
 	pthread_t id[2];
 	pthread_create(&id[0], NULL, createTCPThread, NULL);
@@ -180,7 +186,6 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-
 		char connection[64];
 	   	sprintf(connection,"TCP-LISTEN:%d,fork", atoi(argv[2])+1);
 		char* args[] = { "socat","-d", "-d", "-d", connection, argv[1], NULL };	//run socat and create virtual serial port and add symlink in current directory
@@ -191,7 +196,6 @@ int main(int argc, char* argv[])
 	   	{
 	   		sleep(1);
 	   	}
-
 	}
 	return 0;
 }

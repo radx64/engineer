@@ -1,11 +1,13 @@
 /*
- * Window.cpp
- *
- *  Created on: 11 lis 2013
- *      Author: radek
+ * ===========================================
+ * File:   ConnectWindow.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
  */
 
-#include "ConnectWindow.h"
+#include "ConnectWindow.hpp"
 
 ConnectWindow::ConnectWindow(TcpSocket *socketPtr, VoipPhone *voipPtr, bool *connectionSuccesfull)
 : m_VBox(Gtk::ORIENTATION_VERTICAL),

@@ -1,4 +1,13 @@
-#include "GPIO.h"
+/*
+ * ===========================================
+ * File:   GPIO.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
+
+#include "GPIO.hpp"
 
 using namespace std;
 
@@ -6,7 +15,6 @@ using namespace std;
 
 GPIO::GPIO():valuefd(-1),directionfd(-1),exportfd(-1),unexportfd(-1),gpionum("4")
 {
-    //GPIO4 is default
 	this->export_gpio();
 }
 

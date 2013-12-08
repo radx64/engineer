@@ -5,7 +5,7 @@ CC= g++
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
 #  -pthreads
-CFLAGS= -g -Wall
+CFLAGS= -g -w
 
 LFLAGS= -lpthread -lrt -L ../socket/ -ltcp -L ../voip/ -lvoip -L /usr/lib/ -llinphone -lmediastreamer
 #the build target executable:

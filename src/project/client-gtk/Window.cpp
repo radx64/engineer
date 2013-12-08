@@ -1,11 +1,13 @@
 /*
- * Window.cpp
- *
- *  Created on: 11 lis 2013
- *      Author: radek
+ * ===========================================
+ * File:   Window.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
  */
 
-#include "Window.h"
+#include "Window.hpp"
 
  void LogAppend(Glib::RefPtr<Gtk::TextBuffer> buffer, char *text)
  {

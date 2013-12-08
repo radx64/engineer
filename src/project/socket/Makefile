@@ -6,7 +6,7 @@ AR= ar rcs
 #  -g    adds debugging information to the executable file
 #  -Wall turns on most, but not all, compiler warnings
 #  -pthreads
-CFLAGS= -g -Wall
+CFLAGS= -g
 
 # compile library
 TARGET= libtcp.a

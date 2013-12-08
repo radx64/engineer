@@ -1,3 +1,11 @@
+/*
+ * ===========================================
+ * File:   VoipPhone.hpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
 #include "VoipPhone.hpp"
 
 VoipPhone::VoipPhone(int port)
@@ -43,7 +51,6 @@ void VoipPhone::callStateChanged(LinphoneCore *lc, LinphoneCall *call, LinphoneC
             		printf("Call incoming received !: %s\n",msg);
             		linphone_call_ref(call);
             		printf("Remote address: %s\n",linphone_call_get_remote_address_as_string(call));
-            		//TODO need implementation of somekind of autorization for remote callers
             		linphone_core_accept_call(lc,call);
             break;
             case LinphoneCallIncomingEarlyMedia:
@@ -79,8 +86,10 @@ void VoipPhone::terminate(void)
 void VoipPhone::makeCall(char *destination)
 {
 	call=linphone_core_invite(lc,destination);
-    if (call==NULL){
-            printf("Could not place call to %s\n",destination);
-    }else printf("Call to %s is in progress...",destination);
+    if (call==NULL)
+    {
+    	printf("Could not place call to %s\n",destination);
+    }
+    else  printf("Call to %s is in progress...",destination);
     linphone_call_ref(call);
 }

@@ -1,3 +1,12 @@
+/*
+ * ===========================================
+ * File:   TcpSocket.cpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
+
 #include "TcpSocket.hpp"
 #include "Error.hpp"
 
@@ -53,10 +62,10 @@ void TcpSocket::bind(void)
 printf("Binding socket...\n");
 #endif
 
-	memset(&localHostAddress, 0, sizeof(localHostAddress));   /* Zero out structure */
-    localHostAddress.sin_family = AF_INET;                	/* Internet address family */
-    localHostAddress.sin_addr.s_addr = htonl(INADDR_ANY); 	/* Any incoming interface */
-    localHostAddress.sin_port = htons(getLocalPort());  /* Local port */
+	memset(&localHostAddress, 0, sizeof(localHostAddress));   	/* Zero out structure */
+    localHostAddress.sin_family = AF_INET;                		/* Internet address family */
+    localHostAddress.sin_addr.s_addr = htonl(INADDR_ANY); 		/* Any incoming interface */
+    localHostAddress.sin_port = htons(getLocalPort());  		/* Local port */
 
     if (::bind(listenSocket, (struct sockaddr *) &localHostAddress, sizeof(localHostAddress)) < 0)
     {
@@ -69,12 +78,12 @@ void TcpSocket::connect(char* remoteAddress)
 #ifdef DEBUG
 printf("Connecting to socket...\n");
 #endif
-	memset(&remoteHostAddress, 0, sizeof(remoteHostAddress));     /* Zero out structure */
-    remoteHostAddress.sin_family      = AF_INET;             /* Internet address family */
+	memset(&remoteHostAddress, 0, sizeof(remoteHostAddress));     	/* Zero out structure */
+    remoteHostAddress.sin_family      = AF_INET;             		/* Internet address family */
     remoteHostAddress.sin_addr.s_addr = inet_addr(remoteAddress);   /* Server IP address */
-    remoteHostAddress.sin_port        = htons(getRemotePort()); /* Server port */
+    remoteHostAddress.sin_port        = htons(getRemotePort()); 	/* Server port */
 
-    /* Establish the connection to the echo server */
+    /* Establish the connection to the server */
     if (::connect(listenSocket, (struct sockaddr *) &remoteHostAddress, sizeof(remoteHostAddress)) < 0)
     {
     	error("connect() failed");

@@ -1,5 +1,13 @@
-#ifndef VOIPPHONE_H
-#define VOIPPHONE_H
+/*
+ * ===========================================
+ * File:   VoipPhone.hpp
+ * Author: Radoslaw Pawel Szewczyk
+ *         184792
+ *         Politechnika Wroclawska 2013
+ * ===========================================
+ */
+#ifndef VOIPPHONE_HPP_
+#define VOIPPHONE_HPP_
 #include <linphone/linphonecore.h>
 
 class VoipPhone
@@ -21,4 +29,4 @@ public:
 	void makeCall(char *destination);
 
 };
-#endif //VOIPPHONE_H
+#endif //VOIPPHONE_HPP_
